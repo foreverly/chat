@@ -1,0 +1,822 @@
+*{ margin:0; padding:0; outline: none; box-sizing: border-box; -webkit-box-sizing: border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+html{  width: 100%;   max-width: 768px; margin: 0 auto; background: #fff;}
+body{ background-color:#f5f5f5; width: 100%; font-size:.24rem;   color: #333; position: relative; height: auto; min-height: 100%; font-family: "arial","微软雅黑"; padding-bottom: 1rem;}
+a{ text-decoration:none; outline:none;}
+ 
+h1,h2,h3,h4,h5,h6,ul,ol,li,p{ margin: 0; padding: 0;}
+em,i,span {font-style:normal; display: inline-block;}
+li {list-style: none;}
+.fl{ float:left;}
+.fr{ float:right;}
+.clearfix {*zoom: 1;}
+.clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+input,textarea{ outline: none; }
+input[type="button"],input[type="submit"], input[type="reset"],button{-webkit-appearance: none; font-family: "微软雅黑"}
+input[type="text"],input[type="password"],input[type="button"],textarea{ -webkit-tap-highlight-color:rgba(0,0,0,0); font-family: "微软雅黑"; }
+html,body{
+	overflow: scroll;
+    border: 0;
+    font-family: Helvetica, '黑体', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    max-width: 768px; 
+    margin: 0 auto; 
+
+}
+input, button, select {
+    width: 100%;
+    border-width: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.dltcont{padding-bottom: 0.5rem;min-height: 100%;overflow: scroll;}
+.clearbox{clear: both;}
+.dlttopNav{position:relative;height: 1rem;z-index: 100;background-color: #fff;text-align:center;line-height: 1rem;     border-bottom: 1px solid #d9d9d9;}
+.notice{position: relative;}
+.dlttopNav .menu{
+	position: absolute;
+	width: 0.48rem;
+	height: 0.40rem;
+	top:0.2rem;
+	left:0;
+	background-image: url(http://m.jiedianqian.com/images/assets/icon-menu.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+.dltsec{
+	 position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    border-top: 1px solid #d9d9d9;
+
+
+    background-color: #fff;
+    margin-bottom: 0.2rem;
+   
+}
+.noborder{
+	border: none;
+}
+
+.dlttopNav .kefu {
+    position: absolute;
+    top: 0.2rem;
+    right: 0;
+    width: 0.44rem;
+    height: 0.45rem;
+    background-image: url(http://m.jiedianqian.com/images/assets/icon-kefu.png);
+   	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.dlttopNav .title{
+	font-size: 0.34rem;
+	color:#383838;
+}
+.dlttopline{
+	text-align: center;
+	padding: 0.3rem 0;
+    position: relative;
+
+}
+.dlttopline img{
+	margin:0 auto;
+    text-align: center;
+	width: 3.17rem;
+	height: 0.3rem;
+}
+.loanitem{
+	width: 20%;
+	display: block;
+	box-sizing: border-box;
+	padding: 0.2rem 0;
+	float: left;
+	background: #fff;
+}
+.produlogo{
+	text-align: center;
+}
+.produlogo img{
+	margin:0 auto;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.produ-title{
+	text-align: center;
+    font-size: 0.24rem;
+    line-height: 0.44rem;
+    color: #666;
+}
+.bannerbox{
+  height:1.6rem;
+}
+.bannerbox img{
+	width: 100%;
+	height: 100%;
+}
+.loanrangeitem{
+	width: 25%;
+	box-sizing: border-box;;
+	padding: 0.1rem 0.05rem;
+	float: left;
+}
+.loanrangeitem img{
+	width: 100%;
+}
+.loanrangekind{
+	padding-right: 0.1rem;
+	padding-left: 0.1rem;
+}
+.produline{
+	text-align: center;
+	padding: 0.22rem 0;
+
+}
+.produline img{
+	 margin: 0 auto;
+    text-align: center;
+    width: 3.17rem;
+    height: 0.3rem;
+}
+.producont{
+	padding: 0 0.2rem;
+}
+.produitemtop{
+	overflow: hidden;
+}
+.produitem{
+	border: 1px solid #d9d9d9;
+    border-radius: 0.03rem;
+    position: relative;
+    display: block;
+	margin-bottom: 0.24rem;
+}
+.loanprodulogo{
+	float: left;
+	margin-top: -0.02rem;
+	margin-left:-0.02rem;
+	width: 1.8rem;
+	height:1.8rem;
+	overflow: hidden;
+}
+.loanprodulogo img{
+	width: 1.8rem;
+}
+.produinfo{
+	float: left;
+	margin-left: 0.4rem;
+	padding-top: 0.1rem;
+
+}
+.produinfo .title{
+	font-size: 0.3rem;
+	color:#5d5d62;
+}
+.produinfo .edu{
+	font-size: 0.24rem;
+    color:#a7a7a7;
+}
+.produinfo .lilv{
+	font-size: 0.24rem;
+	color:#999;
+}
+.produitembot{
+	font-size: 0.26rem;
+    color: #666666;
+    background-color: #f4fbfc;
+    position: relative;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 0.67rem;
+    text-align: center;
+    line-height: 0.67rem;
+}
+.produitembot:before{
+	left:0;
+	background-image: url(../images/icon/quoteleft.png);
+}
+.produitembot:after{
+	right:0;
+	background-image: url(../images/icon/quoteright.png);
+}
+.txtellipsis{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.produitem:after{
+    width: 0.25rem;
+    height: 0.36rem;
+    content: '';
+    display: block;
+  	background-image: url(../images/icon/rightsword.png);
+  	background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0.36rem;
+    top: 50%;
+    margin-top: -0.44rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  --------------------贷款详情样式 -------------------*/
+
+.detailnav{
+     height: 0.8rem;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 0.8rem;
+     font-size: 0.34rem;
+}
+.backhome{
+	position: absolute;
+	left:0.15rem;
+	line-height: 0.8rem;
+	color:#00c3ac;
+	font-size: 0.28rem;
+}
+.detailwrap{
+	border-bottom: 1px solid #d9d9d9;
+    margin-bottom:0.4rem;
+}
+.detailbox{
+	 padding: 0.2rem 0.17rem 0;
+     background: #fff;
+}
+.detailtop{
+	 background: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    overflow: hidden;
+    padding-bottom: 0.2rem;
+}
+.detaillogo{
+	float: left;
+    width: 1.8rem;
+    margin-right: 0.4rem;
+
+}
+.detaillogo img{
+	width: 1.8rem;
+	height: 1.8rem;
+}
+.detailright{
+	float: left;
+    position: relative;
+    width: 61%;
+}
+.detailtitle{
+	font-size: 0.32rem;
+    color: #5d5d62;
+    padding: 0.1rem 0 0;
+     
+}
+.detailtaglist{
+	overflow: hidden;
+}
+.detailtaglist li.tag{
+	color: #65a7f9;
+    border: 1px solid #65a7f9;
+    border-radius: 0.05rem;
+    -weblit-border-radius: 0.05rem;
+    font-size: 0.2rem;
+    padding: 0.06rem 0.18rem;
+    letter-spacing: 0.04rem;
+    float: left;
+    font-size: 0.22rem;
+    margin: 3% 3% 0 0;
+}
+.detaillabbot{
+	 color: #a7a7a7;
+    font-size: 0.26rem;
+    line-height: 0.37rem;
+    margin-top: 0.1rem;
+}
+.detailapplynum{
+	color: #a7a7a7;
+    font-size: 0.26rem;
+    line-height: 0.37rem;
+
+}
+.applyrate{
+	margin-left: 0.1rem;
+}
+.detailbot{
+	padding: 0.14rem 0;
+    color: #717070;
+    font-size: 0.26rem;
+}
+li.tag img{
+	width: 0.12rem;
+    height: 0.22rem;
+    vertical-align: middle;
+}
+img.stars{
+	width: 0.24rem;
+	height: 0.21rem;
+}
+.eduboxdown{
+	margin-bottom: 0.2rem;
+}
+.edudowncont{
+    position: relative;
+}
+.eduboxup{
+	position: relative;
+}
+.icontrig{
+     position: absolute;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAaCAIAAAB6opi9AAAAGXRFW…7KsDJtyzA0bciwNf2SYW76KqMF06eMRkxvMtoxvcoeAgwA2GMs7t0cvZgAAAAASUVORK5CYII=) no-repeat 0 0;
+    background-size: cover;
+    width: 0.5rem;
+    height: 0.26rem;
+    left: 50%;
+    margin-left: -0.25rem;
+    bottom: 0;
+}
+ .eduinputcont{
+ 	border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    background: #e4fcf5;
+    padding: 0.18rem 0.18rem 0.3rem;
+    overflow: hidden;
+ }
+.eduinputitem{
+	float: left;
+    margin-right: 0.39rem;
+    width: 46%;
+    position: relative;
+}
+.eduinputitem input{
+     width: 100%;
+    height: 0.58rem;
+    border: 1px solid #63948e;
+    border-radius: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    font-size: 0.28rem;
+    color: #63948e;
+    padding-left: 0.2rem;
+}
+.unit{
+	position: absolute;
+    top: 0.1rem;
+    right: 0.17rem;
+    color: #63948e;
+    font-size: 0.28rem;
+}
+.edu-range{
+	color: #63948e;
+    font-size: 0.24rem;
+    padding-top: 0.1rem;
+}
+.edutimerange{
+	width: 100%;
+    height: 0.58rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    background: #fff;
+}
+.eduinputitem .month{
+	 position: absolute;
+    top: 0.1rem;
+    right: 0.51rem;
+    color: #63948e;
+    font-size: 0.28rem;
+
+}
+.date-range{
+	position: absolute;
+    left: 0;
+    top: 0.6rem;
+    color: #63948e;
+    font-size: 0.24rem;
+    padding-top: 0.1rem;
+}
+.arrowdown{
+	position: absolute;
+    top: 0.26rem;
+    right: 0.21rem;
+    width: 0.15rem;
+    height: 0.07
+}
+.eduboxdown{
+	border-bottom: 1px solid #d9d9d9;
+    background: #fff;
+}
+.edudowncont{
+	overflow: hidden;
+    padding: 0.17rem 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+.edudownitem{
+	float: left;
+    border-right: 1px dashed #d9d9d9;
+    width: 33%;
+}
+.edudownitem .num{
+    font-size: 0.5rem;
+    color: #16c2ac;
+    text-align: center;
+}
+.edudownitem .num span{
+	font-size: 0.2rem;
+}
+.edudownitem .des{
+     color: #b2b2b2;
+    font-size: 0.24rem;
+    text-align: center;
+}
+.txtrepay{
+	color: #666;
+    font-size: 0.28rem;
+    text-align: center;
+    padding: 0.22rem 0;
+}
+.applycond{
+	border-top: 1px solid #d9d9d9;
+    background: #fff;
+    padding: 0 0.2rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+.condtitle{
+	padding: 0.16rem 0;
+    color: #16c2ac;
+    font-size: 0.26rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+.condcont{
+	 overflow: hidden;
+	font-size: 0.24rem;
+    color: gray;
+    padding-top: 0.12rem;
+    line-height: 0.4rem;
+}
+.materialneed{
+	border-top: 1px solid #d9d9d9;
+    background: #fff;
+    padding: 0 0.2rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+.materialneed .title{
+    padding: 0.16rem 0;
+    color: #16c2ac;
+    font-size: 0.26rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+.needcontent{
+	font-size: 0.24rem;
+    color: gray;
+    padding-top: 0.12rem;
+    line-height: 0.4rem;
+    overflow: hidden;
+}
+.applybtnbox{
+	width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateZ(0);
+    height: 1.4rem;
+    z-index: 9999;
+
+}
+.applybtnbox i{
+	background: #000;
+    opacity: 0.5;
+    z-index: 999;
+    font-size: 0.34rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateZ(0);
+    height: 1.4rem;
+
+}
+.applybtnbox button{
+	width: 90%;
+    background: #00c3ac;
+    padding: 0.24rem 0;
+    font-size: 0.34rem;
+    color: #fff;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: 99993;
+    margin-left: -45%;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    border: none;
+}
+.lastinputitem{
+	margin-right: 0;
+}
+.edudownitem:last-child{
+	border-right: 0;
+}
+.applypopcont{
+
+}
+.overgray{
+    background: #000;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.submitinfocont{
+	position: fixed;
+    z-index: 999991;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 7.5rem;
+    margin-left: -47%;
+    margin-top: -3.75rem;
+}
+.popapplybox{
+    overflow: hidden;
+    padding: 0.26rem 0 0 0.26rem;
+}
+.popapplyclose{
+	position: absolute;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAYAAADHLIObAAAAGXRFW…qBNVCgIXQK4P9yCP/I/+UQ/tFO4Q1SeKr9PQZPGP1PgAEAENBQeL8XpkoAAAAASUVORK5CYII=) no-repeat 0 0;
+    background-size: cover;
+    width: 0.82rem;
+    height: 0.82rem;
+    left: 0.35rem;
+    top: 0.3rem;
+    font-size: 0.28rem;
+    color: #00c3ac;
+}
+.subcont{
+	width: 100%;
+}
+.popsubtitle{
+	color: #383838;
+    font-size: 0.34rem;
+    text-align: center;
+    padding: 0.34rem 0;
+    background: #f7f7f7;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    -webkit-border-top-left-radius: 0.1rem;
+    -webkit-border-top-right-radius: 0.1rem;
+}
+.subcont .popinputlist{
+	background: #fff;
+    padding: 0.1rem 0.38rem 0.38rem;
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+    -webkit-border-bottom-left-radius: 0.1rem;
+    -webkit-border-bottom-right-radius: 0.1rem;
+}
+.popinputlist .popinputitem{
+	width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+}
+.popinputitem input{
+	padding: 0.4rem 0 0.17rem;
+    font-size: 0.32rem;
+    color: #383838;
+    padding-left: 0.22rem;
+    width: 100%;
+}
+.popinputlist .yzmimgbox{
+    border-bottom: 0;
+    text-align: center;
+    padding-top: 0.2rem;
+}
+.yzmimgbox .yzmimg{
+    width: 1.82rem;
+    height: 0.82rem;
+    vertical-align: middle;
+}
+.popinputitem .changeyzmbtn{
+    color: #1680fb;
+    font-size: 0.3rem;
+    margin-left: 0.2rem;
+}
+.popinputlist .vertify{
+    border-bottom: 0;
+}
+.vertify input{
+	width: 59%;
+    border-bottom: 1px solid #dcdcdc;
+    border: none;
+}
+.popinputitem .sendyzmbtn{
+    width: 39%;
+    background: #00c3ac;
+    padding: 0.16rem 0;
+    color: #fff;
+    font-size: 0.26rem;
+    border-radius: 0.08rem;
+    -webkit-border-radius:0.08rem;
+    box-sizing: border-box;
+    border: none;
+}
+.comfirmsub{
+	margin-top: 0.5rem;
+}
+.comfirmsub button{
+	background: #00c3ac;
+    padding: 0.24rem 0;
+    font-size: 0.34rem;
+    color: #fff;
+    border-radius: 0.08rem;
+    -webkit-border-radius: 0.08rem;
+
+}
+
+
+/* ------------- 贷款产品列表 -----------------*/
+
+.produlistNav{
+     height: 0.8rem;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 0.8rem;
+     font-size: 0.34rem;
+}
+.produlistNav .backhome{
+	position: absolute;
+	left:0.15rem;
+	line-height: 0.8rem;
+	color:#00c3ac;
+	font-size: 0.28rem;
+}
+.dltprodulistcont .dropmenulist{
+    position: absolute;
+    right: 0;
+    top: 1.4rem;
+    width: 100%;
+    background: #fff;
+    z-index: 1;
+}
+.dropmenulist ul.produselectlist{
+	font-size: 0.28rem;
+    width: 90%;
+    margin: 0 5%;
+    line-height: 0.96rem;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 4%;
+
+}
+.dropmenulist ul.produselectlist li{
+	width: 28%;
+    float: left;
+    border: 1px solid #999;
+    border-raduis: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    padding: 5% 0;
+    line-height: 0;
+    margin: 4% 0 0 5%;
+}
+.dropmenulist ul.produselectlist li:active{
+	color: #16c2ac;
+    border: 1px solid #16c2ac;
+}
+.dropdowncont{
+	height: 0.8rem;
+    background: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 0.1rem 0;
+}
+.dropdowncont .dropmenu{
+    float: left;
+    color: #383838;
+    font-size: 0.28rem;
+    font-family: simhei;
+    width: 48%;
+    padding: 0.1rem 0;
+    text-align: center;
+    border-right: 1px solid #d9d9d9;
+    position: relative;
+}
+.dropmenu i{
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAQCAYAAAAFzx/vAAAAGXRFW…ohbDkdxLj8qKf1nfl1Z4Z09Y6vQB4nyTgK9cBfcPvwjwADAI3BUElBozCyAAAAAElFTkSuQmCC) no-repeat 0 0;
+    background-size: cover;
+    width: 0.28rem;
+    height: 0.16rem;
+    display: inline-block;
+    margin: -0.08rem 0 0 0.12rem;
+    vertical-align: middle;
+}
+.produtoptips{
+	background-color: #fffbf5;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    color: #999;
+    font-size: 0.26rem;
+    padding-left: 0.12rem;
+    padding-right: 0.12rem;
+    border-bottom: 0.01rem solid #d9d9d9;
+}
+.produtoptips img{
+	width: 0.28rem;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.produlistcont{
+	padding: 0.2rem 0.17rem 0;
+}
+.loanproduitem{
+	width: 100%;
+    margin-bottom: 0.17rem;
+    border: 2px solid #d9d9d9;
+    position: relative;
+}
+.loanproduitem .itemup{
+	background: #fff;
+    height: 1.5rem;
+    overflow: hidden;
+}
+.loanproduitem .itemleft{
+    float: left;
+    width: 1.5rem;
+    margin-right: 0.4rem;
+}
+.loanproduitem .itemleft img{
+	 width: 1.5rem;
+    height: 1.5rem;
+}
+.loanproduitem .itemcenter{
+    width: 60%;
+    float: left;
+    position: relative;
+}
+.loanproduitem .itemtitle{
+    font-size: 0.32rem;
+    color: #5d5d62;
+    padding: 0.16rem 0 0;
+}
+.itemdetail p{
+	color: #a7a7a7;
+    font-size: 0.26rem;
+    line-height: 0.37rem;
+}
+.itemdown span{
+	 width: 79%;
+    display: inline-block;
+    vertical-align: top;
+}
+.loanproduitem .itemdown{
+    background: #fffbf5;
+    padding: 0.14rem 0;
+    color: #717070;
+    font-size: 0.26rem;
+}
+.itemdown img{
+     width: 5%;
+    margin: 0 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

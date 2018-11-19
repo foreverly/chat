@@ -1,0 +1,2490 @@
+*{ margin:0; padding:0; outline: none; box-sizing: border-box; -webkit-box-sizing: border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+html{  width: 100%;   max-width: 768px; margin: 0 auto; background: #fff;}
+body{ background-color:#f5f5f5; width: 100%; font-size:.24rem;   color: #333; position: relative; height: auto; min-height: 100%; font-family: "arial","微软雅黑"; padding-bottom: 1rem;}
+a{ text-decoration:none; outline:none;}
+ 
+h1,h2,h3,h4,h5,h6,ul,ol,li,p{ margin: 0; padding: 0;}
+em,i,span {font-style:normal; display: inline-block;}
+li {list-style: none;}
+.fl{ float:left;}
+.fr{ float:right;}
+.clearfix {*zoom: 1;}
+.clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+input,textarea{ outline: none; }
+input[type="button"],input[type="submit"], input[type="reset"],button{-webkit-appearance: none; font-family: "微软雅黑"}
+input[type="text"],input[type="password"],input[type="button"],textarea{ -webkit-tap-highlight-color:rgba(0,0,0,0); font-family: "微软雅黑"; }
+
+html,body{
+    border: 0;
+    font-family: "Arial","Microsoft YaHei","微软雅黑","宋体",'Hiragino Sans GB',,"黑体",sans-serif; 
+    font-family: Helvetica, '黑体', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235,235,241);
+    max-width: 768px; 
+    margin: 0 auto; 
+    font-weight: normal;
+    height: 100%;
+    overflow-y:visible
+}
+::-webkit-scrollbar {/*隐藏滚轮*/
+display: none;
+}
+
+div{
+    box-sizing: border-box;
+}
+input, button, select {
+    width: 100%;
+    border-width: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+}
+img { -webkit-user-select: none;  pointer-events: none; }
+ #loadingbox { position: absolute; top: 40%; left: 50%; z-index:20005; }
+.bannerimg,#qrcodeimg{ -webkit-user-select:all;pointer-events: auto;}
+[v-cloak] {
+    display: none !important;
+}
+.gradient{
+    background: -webkit-linear-gradient(top left, #F10180, #F56494);
+   background: -o-linear-gradient(top left,#F10180, #F56494, );
+   background: -moz-linear-gradient(top left,#F10180, #F56494);
+   background: -ms-linear-gradient(top left,#F10180, #F56494);
+}
+.title{
+   font-weight: normal;
+}
+.backbtn{
+    position: absolute;
+    left:0.0rem;
+    top:0rem;
+    width:0.9rem;
+    height: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.backbtn img{
+   width: 0.22rem;
+    height: 0.4rem;
+    vertical-align: middle;
+    text-align: center;
+}
+.overgray{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    z-index: 1000;
+}
+.overgray2{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 1000px;
+    background: #000;
+    opacity: 0.6;
+    z-index: 10;
+    
+}
+.redborder{border:1px solid #F10180;}
+.grayborder{border:1px solid #dbdbdb;}
+
+.dltcont{padding-bottom: 1.1rem;min-height: 100%;overflow: hidden;}
+.clearbox{clear: both;}
+.dlttopNav{position:relative;height: 1rem;z-index: 100;background-color: #fff;text-align:center;line-height: 1rem;    }
+.notice{position: relative;}
+.dlttopNav .menu{
+    position: absolute;
+    width: 0.48rem;
+    height: 0.40rem;
+    top:0.2rem;
+    left:0;
+ 
+
+}
+
+/* -------------首页样式--------------*/
+.dltsec{
+     position: relative;
+    background-color: #fff;
+    overflow: hidden;
+   
+    background-color: #f2f2f2;
+ 
+    width: 100%;
+   
+}
+.loancategory{
+    background: rgb(239,239,239);
+    background: #fff;
+    padding-top: 0.2rem;
+}
+.noborder{
+    border: none;
+}
+
+.dlttopNav .kefu {
+    position: absolute;
+    top: 0.2rem;
+    right: 0;
+    width: 0.44rem;
+    height: 0.45rem;
+ 
+    
+}
+.dlttopNav .title{
+    font-size: 0.40rem;
+    color:#fff;
+}
+.dlttopline{
+    text-align: center;
+    padding: 0.3rem 0;
+    position: relative;
+
+}
+.dlttopline img{
+    margin:0 auto;
+    text-align: center;
+    width: 3.17rem;
+    height: 0.3rem;
+}
+.loanitem{
+
+    width: 20%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0.14rem 0;
+    float: left;
+    
+}
+
+.produlogo{
+    text-align: center;
+}
+.produlogo img{
+    margin:0 auto;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+.produ-title{
+    text-align: center;
+    font-size: 0.24rem;
+    line-height: 0.44rem;
+    color: #666;
+}
+.loan-produlist{
+    padding: 0 0.2rem;
+    position: relative;
+    overflow: hidden;
+}
+.bannerbox{
+  height:3rem;
+}
+.adpos{
+    margin-bottom: 0;
+}
+.bannerbox img{
+    width: 100%;
+    height: 100%;
+}
+.loanrangeitem{
+    width: 25%;
+    box-sizing: border-box;;
+    padding: 0 0.05rem;
+    float: left;
+}
+.loanrangeitem img{
+    width: 95%;
+
+}
+.loanrangekind{
+    padding-right: 0.15rem;
+    padding-left: 0.15rem;
+    padding-top: 0.12rem;
+    margin-bottom: 0;
+}
+
+.produhotTab{
+    position: relative;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.32rem;
+    
+    background: rgb(235,235,241);
+}
+.produleftlab{
+    float: left;
+    margin-left:0.4rem;
+    font-size: 0.3rem;
+}
+.produmorelab{
+    float: right;
+    font-size: 0.3rem;
+    margin-right: 0.45rem;
+}
+.produline img{
+     margin: 0 auto;
+    text-align: center;
+    width: 3.17rem;
+    height: 0.3rem;
+}
+ 
+.produitemtop{
+    overflow: hidden;
+ 
+}
+.producont{
+    background: rgb(235,235,241);
+}
+.produitem .starsbox{
+    font-size: 0.24rem;
+    color:#858585;
+}
+.produitem{
+    position: relative;
+    display: block;
+    background: #fff;
+    border-bottom:1px solid rgba(229, 229, 229, 1);
+    padding-top: 0.35rem;
+    margin-bottom: 0.24rem;
+
+}
+.applynum ,.applynumlab{
+    position: absolute;
+    right: 0.75rem;
+    top: 0.35rem;
+    font-size: 0.24rem;
+    color:#333;
+     
+}
+.applynum .applynumtxt{
+    color:#858585;
+} 
+.loanprodulogo{
+
+    top: 1rem;
+    float: left;
+    margin-left:0.24rem;
+    width: 1.2rem;
+    height:1.2rem;
+    overflow: hidden;
+    border-radius: 0.2rem;
+}
+.loanprodulogo img{
+    width: 100%;
+    height: 100%;
+}
+.produinfo{
+    float: left;
+    margin-left: 0.25rem;
+    line-height: 0.35rem;
+ 
+
+}
+.produinfo .title{
+    width: 4rem;
+    font-size: 0.3rem;
+    color:#5d5d62;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin-bottom: 0.2rem;
+
+    
+}
+.ellipsis{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.produinfo .edu{
+    font-size: 0.24rem;
+    color:#858585;
+}
+.produinfo .lilv{
+    font-size: 0.24rem;
+  
+    position: absolute;
+    right: 0.75rem;
+    bottom:  0.85rem;
+    color:#f10180;
+}
+.produinfo .lilv2{
+    bottom : 0.8rem;
+}
+.produinfo .lilvlab{
+    margin-left: 0.1rem;
+    color:#555;
+}
+
+
+.produitembot{
+    position: absolute;
+    bottom: 0.07rem;
+    width: 76%;
+    margin-left: 12%;
+    font-size: 0.24rem;
+    color: #666666;
+    background-color: #dbdbdb;
+    height: 0.38rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: center;
+    line-height: 0.43rem;
+    color:#fff;
+}
+.produitembot:before{
+    left:0;
+    background-image: url(../images/icon/quoteleft.png);
+}
+.produitembot:after{
+    right:0;
+    background-image: url(../images/icon/quoteright.png);
+}
+.txtellipsis{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.produitem:after{
+    width: 0.25rem;
+    height: 0.36rem;
+    content: '';
+    display: block;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0.36rem;
+    top: 50%;
+    margin-top: -0.44rem;
+}
+.produitem .slognitem{
+    position: relative;
+    height: 0.56rem;
+    text-align: center;
+    color:#666;
+    font-size: 0.26rem;
+    line-height: 0.56rem;
+    margin-top: 0.23rem;
+    background: rgba(243, 249, 255, 1);
+
+}
+.DltTab{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.1rem;
+    background: #fff;
+    border-top: 1px solid #dbdbdb;
+    z-index: 10000;
+    text-align: center;
+
+}
+.dtabicon{
+    width: 0.48rem;
+    height: 0.48rem;
+    background-image: url(../images/home/homenor.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 0.08rem;
+    text-align: center;
+}
+
+.tabmenu{
+    float: left;
+    text-align: center;
+    position: absolute;
+    top:0.15rem;
+    font-size: 0.24rem;
+    color:#6E6E6E;
+    line-height: 1.5;
+}
+.hometab{
+    position: absolute;
+    left: 10%;
+    text-align: center;
+}
+.loantab{
+    position: absolute;
+    left:35%;
+}
+.credittab{
+   position: absolute;
+   left:58%;  
+}
+.persontab{
+    position: absolute;
+    right:10%;  
+}
+.homeicon{
+    background-image: url(../images/tab/ic_home_nor.png);
+    margin-left: 0.03rem;
+}
+.loanicon{
+    background-image: url(../images/tab/ic_loan_nor.png);
+    margin-left: 0.03rem;
+}
+.crediticon{
+    background-image: url(../images/tab/ic_credit_nor.png);
+    margin-left: 0.08rem;
+}
+.personicon{
+    background-image: url(../images/tab/ic_me_nor.png);
+     margin-left: 0.03rem;
+}
+.tabmenuselected{
+    color:#F10180;
+}
+.homeselected{
+ background-image: url(../images/tab/ic_home_active.png);
+ color:#F10180;
+ margin-left: 0.03rem;
+}
+.creditselected{
+ background-image: url(../images/tab/ic_credit_active.png);
+ color:#F10180;
+margin-left: 0.08rem;
+}
+.loanselected{
+ background-image: url(../images/tab/ic_loan_active.png);
+ color:#F10180;
+ margin-left: 0.03rem;
+}
+.personselected{
+ background-image: url(../images/tab/ic_me_active.png);
+ color:#F10180;
+ margin-left: 0.03rem;
+}
+.moresword{
+    position: absolute;
+    right: 0.2rem;
+    top: 0.03rem;
+    width: 0.12rem;
+    height: 0.22rem;
+
+}
+.produleftlab:after{
+    content: "";
+    position: absolute;
+    left: 0.24rem;
+    top: 0.2rem;
+    width: 0.06rem;
+    height: 0.3rem;
+    background-color: rgba(241, 1, 128, 1);
+    border-radius: 3px 3px 3px 3px;
+}
+.moresword img{
+    width: 100%;
+    height: 100%;
+}
+.prorightsword{
+    display: block;
+    position: absolute;
+    right: 0.3rem;
+    top:0.85rem;
+    width: 0.16rem;
+    height: 0.25rem;
+}
+.prorightsword img{
+    width: 100%;
+    height: 100%;
+}
+.loanrangebox{
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    background: #fff;
+    border-top: 1px solid #E5E5E5;
+}
+.loanrangebox .rangeitem{
+    position: relative;
+
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+    width: 49%;
+    height: 1.5rem;
+    border-left: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+   
+    background: #fff;
+}
+.norightborder{
+    border-right: none!important;
+}
+.nobotborder{
+    border-bottom: none!important;
+}
+.loanrangebox .rangeitem .rangeicon{
+    position: absolute;
+    top: 0.34rem;
+    left: 0.3rem;
+    display: inline-block;
+    width:0.96rem;
+    height: 0.96rem;
+
+}
+.loanrangebox .rangeitem .rangeicon img{
+    width:100%;
+    height: 100%;
+}
+.loanrangebox .rangeitem .rangelab{
+   display: inline-block;
+   margin-left: 1.5rem;
+   font-size: 0.3rem;
+   margin-top: 0.3rem;
+   line-height: 1.6;
+   color:#292e32;
+}
+.loanrangebox .rangeitem  .rangelab2{
+    color:#666;
+}
+/*  -------------------------------贷款详情样式 --------------------------*/
+
+ 
+.detailnav{
+     height: 0.8rem;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 0.8rem;
+     font-size: 0.34rem;
+}
+.backhome{
+    position: absolute;
+    left:0.15rem;
+    line-height: 1rem;
+    color:#fff;
+    font-size: 0.28rem;
+    font-weight: normal;
+
+}
+.detailwrap{
+     
+    margin-bottom:0.4rem;
+}
+.detailtopbox{
+    position: relative;
+    padding: 0.3rem 0;
+    padding-top: 0;
+    
+}
+.detailtop{
+   overflow: hidden;
+    margin-bottom: 0.35rem; 
+}
+.detailbox{
+     position: relative;
+     background: #fff;
+     overflow: hidden;
+     padding: 0.12rem;
+     padding-bottom: 0.3rem;
+ 
+}
+.detailtop{
+    
+}
+.detaillogo{
+    float: left;
+    margin-left: 0.12rem;
+    width: 1.4rem;
+    margin-top: 0.16rem;
+    
+
+}
+.detaillogo img{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 0.2rem;
+}
+.detailright{
+    float: left;
+    position: relative;
+    width: 65%;
+    overflow: hidden;
+    margin-left: 0.5rem;
+}
+.detailtitle{
+    width: 4rem;
+    font-size: 0.32rem;
+    color: #333;
+    padding: 0.1rem 0 0;
+
+     
+}
+.prodetailitembot{
+    
+   position: absolute;
+    bottom: 0.08rem;
+    width: 76%;
+    margin-top: 0.3rem;
+    margin-left: 12%;
+    font-size: 0.24rem;
+    color: #666666;
+    background-color: #dbdbdb;
+    height: 0.36rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: center;
+    line-height: 0.36rem;
+    color: #fff;
+}
+.detailtaglist{
+    overflow: hidden;
+    margin-bottom: 0.2rem;
+   
+}
+.detailtaglist li.tag{
+    color: #F10180;
+    border: 1px solid #F10180;
+    border-radius: 0.05rem;
+    -weblit-border-radius: 0.05rem;
+    font-size: 0.2rem;
+    padding: 0.02rem 0.08rem;
+    letter-spacing: 0.04rem;
+    float: left;
+    font-size: 0.22rem;
+    margin: 2% 3% 0 0;
+     
+}
+.detaillabbot{
+     color: #858585;
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+    margin-top: 0.1rem;
+ 
+
+}
+.detailapplynum{
+ 
+}
+ .applaysuccess{
+    margin-top: 0rem;
+    margin-left: 0.1rem;
+ }
+.detailbot{
+    padding: 0.14rem 0;
+    color: #717070;
+    font-size: 0.26rem;
+}
+li.tag img{
+    width: 0.12rem;
+    height: 0.22rem;
+    vertical-align: middle;
+}
+img.stars{
+    width: 0.24rem;
+    height: 0.21rem;
+}
+.eduboxdown{
+    margin-bottom: 0.2rem;
+}
+.edudowncont{
+    position: relative;
+}
+.eduboxup{
+    position: relative;
+}
+.icontrig{
+     position: absolute;
+    
+    width: 0.5rem;
+    height: 0.26rem;
+    left: 50%;
+    margin-left: -0.25rem;
+    bottom: 0;
+}
+ .eduinputcont{
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    background: #e4fcf5;
+    padding: 0.18rem 0.18rem 0.3rem;
+    overflow: hidden;
+ }
+.eduinputitem{
+    float: left;
+    margin-right: 0.39rem;
+    width: 46%;
+    position: relative;
+}
+.eduinputitem input{
+     width: 100%;
+    height: 0.58rem;
+    border: 1px solid #63948e;
+    border-radius: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    font-size: 0.28rem;
+    color: #63948e;
+    padding-left: 0.2rem;
+}
+.unit{
+    position: absolute;
+    top: 0.1rem;
+    right: 0.17rem;
+    color: #63948e;
+    font-size: 0.28rem;
+}
+.edu-range{
+    color: #63948e;
+    font-size: 0.24rem;
+    padding-top: 0.1rem;
+}
+.edutimerange{
+    width: 100%;
+    height: 0.58rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    background: #fff;
+}
+.eduinputitem .month{
+     position: absolute;
+    top: 0.1rem;
+    right: 0.51rem;
+    color: #63948e;
+    font-size: 0.28rem;
+
+}
+.date-range{
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    color: #63948e;
+    font-size: 0.24rem;
+    padding-top: 0.1rem;
+}
+.arrowdown{
+    position: absolute;
+    top: 0.26rem;
+    right: 0.21rem;
+    width: 0.15rem;
+    height: 0.07
+}
+.eduboxdown{
+    border-bottom: 1px solid #d9d9d9;
+    background: #fff;
+}
+.edudowncont{
+    overflow: hidden;
+    padding: 0.17rem 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+.edudownitem{
+    float: left;
+    border-right: 1px dashed #d9d9d9;
+    width: 33%;
+}
+.edudownitem .num{
+    font-size: 0.5rem;
+    color: #16c2ac;
+    text-align: center;
+}
+.edudownitem .num span{
+    font-size: 0.2rem;
+}
+.edudownitem .des{
+     color: #b2b2b2;
+    font-size: 0.24rem;
+    text-align: center;
+}
+.txtrepay{
+    color: #666;
+    font-size: 0.28rem;
+    text-align: center;
+    padding: 0.22rem 0;
+}
+.applycond{
+    border-top: 1px solid #d9d9d9;
+    background: #fff;
+    padding: 0 0.2rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+.condtitle{
+    padding: 0.16rem 0;
+    color: #16c2ac;
+    font-size: 0.26rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+.condcont{
+     overflow: hidden;
+    font-size: 0.24rem;
+    color: gray;
+    padding-top: 0.12rem;
+    line-height: 0.4rem;
+}
+.materialneed{
+    border-top: 1px solid #d9d9d9;
+    background: #fff;
+    padding: 0 0.2rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+.materialneed .title{
+    padding: 0.16rem 0;
+    color: #16c2ac;
+    font-size: 0.26rem;
+    border-bottom: 1px solid #d9d9d9;
+}
+.needcontent{
+    font-size: 0.24rem;
+    color: gray;
+    padding-top: 0.12rem;
+    line-height: 0.4rem;
+    overflow: hidden;
+}
+.applybtnbox{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateZ(0);
+    height: 1.4rem;
+    z-index: 9999;
+
+}
+.applybtnbox i{
+    background: #000;
+    opacity: 0.5;
+    z-index: 999;
+    font-size: 0.34rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: translateZ(0);
+    height: 1.4rem;
+
+}
+.applybtnbox button{
+    width: 90%;
+    background: #00c3ac;
+    padding: 0.24rem 0;
+    font-size: 0.34rem;
+    color: #fff;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: 99993;
+    margin-left: -45%;
+    transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    border: none;
+}
+.lastinputitem{
+    margin-right: 0;
+}
+.edudownitem:last-child{
+    border-right: 0;
+}
+.applypopcont{
+
+}
+ 
+.submitinfocont{
+    position: fixed;
+    z-index: 999991;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 7.5rem;
+    margin-left: -47%;
+    margin-top: -3.75rem;
+}
+.popapplybox{
+    overflow: hidden;
+    padding: 0.26rem 0 0 0.26rem;
+}
+.popapplyclose{
+    position: absolute;
+   
+    width: 0.82rem;
+    height: 0.82rem;
+    left: 0.35rem;
+    top: 0.3rem;
+    font-size: 0.28rem;
+    color: #F10180;
+}
+.subcont{
+    width: 100%;
+}
+.popsubtitle{
+    color: #383838;
+    font-size: 0.34rem;
+    text-align: center;
+    padding: 0.34rem 0;
+    background: #f7f7f7;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    -webkit-border-top-left-radius: 0.1rem;
+    -webkit-border-top-right-radius: 0.1rem;
+}
+.subcont .popinputlist{
+    background: #fff;
+    padding: 0.1rem 0.38rem 0.38rem;
+    border-bottom-left-radius: 0.1rem;
+    border-bottom-right-radius: 0.1rem;
+    -webkit-border-bottom-left-radius: 0.1rem;
+    -webkit-border-bottom-right-radius: 0.1rem;
+}
+.popinputlist .popinputitem{
+    width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+}
+.popinputitem input{
+    padding: 0.4rem 0 0.17rem;
+    font-size: 0.32rem;
+    color: #383838;
+    padding-left: 0.22rem;
+    width: 100%;
+}
+.popinputlist .yzmimgbox{
+    border-bottom: 0;
+    text-align: center;
+    padding-top: 0.2rem;
+}
+.yzmimgbox .yzmimg{
+    width: 1.82rem;
+    height: 0.82rem;
+    vertical-align: middle;
+}
+.popinputitem .changeyzmbtn{
+    color: #1680fb;
+    font-size: 0.3rem;
+    margin-left: 0.2rem;
+}
+.popinputlist .vertify{
+    border-bottom: 0;
+}
+.vertify input{
+    width: 59%;
+    border-bottom: 1px solid #dcdcdc;
+    border: none;
+}
+.popinputitem .sendyzmbtn{
+    width: 39%;
+    background: #F10180;
+    padding: 0.16rem 0;
+    color: #fff;
+    font-size: 0.26rem;
+    border-radius: 0.08rem;
+    -webkit-border-radius:0.08rem;
+    box-sizing: border-box;
+    border: none;
+}
+.comfirmsub{
+    margin-top: 0.5rem;
+}
+.comfirmsub button{
+    background: #F10180;
+    padding: 0.24rem 0;
+    font-size: 0.34rem;
+    color: #fff;
+    border-radius: 0.08rem;
+    -webkit-border-radius: 0.08rem;
+
+}
+.botsword{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 0.53rem;
+    height: 0.4rem;
+
+}
+.botsword img{
+    width: 100%;
+    height: 100%
+}
+.detaillmidcont{
+    position: relative;
+   
+    background: #fff;
+   
+}
+.detaillmidcont .detailmidbox1{
+    font-size: 0.3rem;
+    color:#666;
+    line-height: 0.5rem;
+
+}
+.detailmidbox1 .midlab1{
+    display: inline-block;
+    width: 32%;
+    box-sizing: border-box;
+    text-align: center;
+    color:#999;
+    font-size: 0.26rem;
+}
+.detailmidbox1 .midlab1:after{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 1px;
+    height: 0.66rem;
+    background-color: rgba(221, 221, 221, 1);
+}
+.bot4{
+    margin-bottom: 0.4rem;
+}
+.detailcont{
+    background: rgb(235,235,241);
+}
+.detailmidbox2{
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+ 
+  font-size: 0.3rem;
+  color:#6E6E6E;
+  text-indent: 0.24rem;
+  border-bottom:1px solid  rgba(221, 221, 221, 1);
+  
+}
+.detailmidbox2 .midlab2left{
+    float: left;
+    left: 0.3rem;
+
+}
+.detaillmidcont .loaninfobox{
+    height: 0.84rem;
+    background: rgb(235,235,241);
+    font-size: 0.28rem;
+    color:#999;
+    text-indent: 0.3rem;
+    text-align: left;
+    
+    vertical-align: bottom;
+    line-height: 1.1rem;
+}
+.detailmidbox2 .midlab2right{
+    float: right;
+    right: 0rem;
+    margin-right: 0.3rem;
+}
+.t10{
+    margin-top: 0.1rem;
+}
+.detailmidbox2 .midlab2right input{
+    height: 0.6rem;
+    width: 2.5rem;
+    border:none;
+    text-align: right;
+    margin-right: 0.1rem;
+    background: #fff;
+    font-size: 0.28rem;
+}
+.detailmidbox3{
+    width: 100%;
+    height: 0.8rem;
+    border-radius: 0.12rem;
+    background: #F2F2F2;
+    font-size: 0.24rem;
+    color:#6E6E6E;
+    padding: 0.03rem;
+    line-height: 1.4;
+}
+.detailmidbox3 .midlab3{
+    display: inline-block;
+    width: 32%;
+    box-sizing: border-box;
+    text-align: center;
+}
+ 
+.detailmidebox4{
+    position: relative;
+    height: 1.1rem;
+    background: #fff;
+
+
+}
+.detailmidebox4 .detailfkbox{
+    position: relative;
+    width: 5.56rem;
+    height: 0.4rem;
+    color:#fff;
+    
+    color:#fff;
+    text-align: center;
+    line-height: 0.4rem;
+    margin:  0 auto;
+    top: 0.34rem;
+}
+.detailfkbox .sword{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 0.53rem;
+    height: 0.4rem;
+}
+.detailfkbox .lab{
+    margin-left: 0.3rem;
+}
+.detailfkbox .sword img{
+    width: 100%;
+    height: 100%;
+}
+.applayprocesscont{
+    position: relative;
+    width:100%;
+    overflow-x: scroll;
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    margin-top:0.3rem;
+ 
+}
+.applayprocesscont .processlab{
+    height: 0.8rem;
+    background: #fff;
+    font-size: 0.35rem;
+    line-height: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #dbdbdb;
+    color:#292e32;
+    text-indent: 0.5rem;
+}
+.applayprocesscont .processlab:after{
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 0.25rem;
+    width: 0.06rem;
+    height: 0.3rem;
+    background-color: rgba(241, 1, 128, 1);
+    border-radius: 3px 3px 3px 3px;
+}
+.processiconcont{
+    background: #fff;
+    padding: 0.36rem 0;
+    text-align: center;
+    overflow-x: auto;
+    white-space: nowrap;
+   
+     
+}
+.processiconcont .processicon{
+    position: relative;
+    display: inline-block;
+    width: 0.8rem;
+    text-align: center;
+    height: 0.8rem;
+    border-radius: 0.8rem;
+    border:1px solid #F10180;
+    line-height: 0.8rem;
+    font-size: 0.36rem;
+    font-weight: lighter;
+    color:#ff194b;
+    margin-bottom: 0.15rem;
+    background-color: rgba(255, 224, 236, 1);
+     
+    border: solid 1px rgba(255, 116, 168, 1);
+}
+.processitem{
+    width: 24%;
+    display: inline-block;
+    text-align: center;
+   /* float: left;*/
+   
+}
+.processiconcont .processicon:after{
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top:0.3rem;
+    width: 0.4rem;
+    height: 0.2rem;
+    background-image: url(../images/dicon/swordprocess.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.processimgbox .processitem:last-child .processicon:after{
+     content: '';
+    position: absolute;
+    left: 1rem;
+    top:0.3rem;
+    width: 0rem;
+    height: 0rem;
+    background: #532;
+}
+ 
+.processiconcont .processicon img{
+    width: 0.92rem;
+    height: 0.92rem;
+
+}
+.processtxt span{
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.24rem;
+    color:#6E6E6E;
+   /* margin-top: 0.05rem;*/
+
+
+}
+.detailitem{
+    position: relative;
+   
+    background:#fff;
+}
+.detailitem .content{
+ border-bottom: 1px solid #dbdbdb;
+ font-size: .24rem;
+ color:#6E6E6E;
+ padding: 0.2rem 0.25rem;
+ background: #fff;
+ padding-left: 0.3rem;
+}
+.detailitem .title{
+ text-align: left;
+  text-indent: 0.45rem;
+  color:#292e32;
+  font-size: 0.3rem;
+  height: 0.76rem;
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  line-height: 0.76rem;
+  font-weight: bold;
+}
+.t30{
+    margin-top: 0.3rem;
+}
+.detailitem .title:after{
+    content: "";
+    position: absolute;
+    left: 0.3rem;
+    top: 0.23rem;
+    width: 0.06rem;
+    height: 0.3rem;
+    background-color: rgba(241, 1, 128, 1);
+    border-radius: 3px 3px 3px 3px;
+}
+/*checkbox*/
+.checkbox {
+    position: relative;
+  line-height: .1rem;
+  display: inline-block;
+  background: url(../images/dicon/checkbox-sel.png) no-repeat center center;
+  background-size: 100%;
+  top:-0.03rem;
+}
+
+.checkbox_c1 {
+  vertical-align:middle; 
+  visibility: hidden;
+  width:0.3rem;
+  height: 0.3rem;
+  line-height: .1rem;
+
+}
+
+.checkbox.on_check {
+  background: none;
+  box-shadow: 0 0 0 1px #eb5405 inset;
+  border-radius: 2px;
+}
+.agreementbox{
+    text-align: center;
+    margin-top: 0.24rem;
+    font-size: 0.3rem;
+    color:#5A5959;
+    margin-bottom: 0.44rem;
+}
+
+.btnbox{
+    padding: 0;
+    width: 100%;
+     
+}
+.btn{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   color:#fff;
+   line-height:0.9rem;
+   font-size: 0.32rem;
+   background: #F10180;
+
+}
+ 
+/* ------------- 贷款产品列表 -----------------*/
+
+.produlistNav{
+     height: 0.8rem;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+    line-height: 0.8rem;
+     font-size: 0.34rem;
+}
+.produlistNav .backhome{
+    position: absolute;
+    left:0.15rem;
+    line-height: 0.8rem;
+    color:#00c3ac;
+    font-size: 0.28rem;
+}
+.dltprodulistcont{
+    padding-bottom: 1.5rem;
+}
+.dltprodulistcont .dropmenulist{
+    position: fixed;
+    top:1.8rem;
+    right: 0;
+   
+    width: 100%;
+    background: #fff;
+    z-index: 10002;
+
+}
+.dropmenulist ul.produselectlist{
+    font-size: 0.28rem;
+    width: 90%;
+    margin: 0 5%;
+    line-height: 0.96rem;
+    text-align: center;
+    overflow: hidden;
+    padding-bottom: 4%;
+
+}
+.dropmenuselected{
+    border: 1px solid #f10180;
+    color:#f10180;
+}
+.dropmenulist ul.produselectlist li{
+    width: 28%;
+    float: left;
+    border: 1px solid #999;
+    border-radius: 0.05rem;
+    -webkit-border-radius: 0.05rem;
+    padding: 5% 0;
+    line-height: 0;
+    margin: 4% 0 0 5%;
+}
+.dropmenulist ul.produselectlist li:active{
+    color: #f10180;
+    border: 1px solid #f10180;
+}
+.dropdowncont{
+    position: relative;
+    background: #F2F2F2;
+    overflow: hidden;
+    z-index: 1001;
+    height: 0.8rem;
+    line-height: 0.8rem;
+}
+.dropdowncont .dropmenu{
+    float: left;
+    color: #383838;
+    font-size: 0.28rem; 
+    width: 32%;
+    text-align: center;
+    position: relative;
+    color:#F10180;
+    height: 100%;
+   
+}
+i{
+    position: relative;
+}
+.dropmenu i{
+    background-image: url(../images/dicon/downsword.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0.1rem;
+    top:0.3rem;
+    width: 0.3rem;
+    height: 0.17rem;
+    display: inline-block;
+   
+    vertical-align: middle;
+}
+.produtoptips{
+    width: 100%;
+    background-color: rgba(255, 247, 194, 1);
+    height: 0.55rem;
+    line-height: 0.55rem;
+    color: #5A5959;
+    text-align: center;
+    font-size: 0.24rem;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    color: #f39800;
+
+}
+.produtoptips img{
+    width: 0.28rem;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.produlistcont{
+  margin-top: 0.3rem;  
+   
+}
+
+.loanproduitem{
+    width: 100%;
+    margin-bottom: 0.17rem;
+    border: 2px solid #d9d9d9;
+    position: relative;
+}
+.loanproduitem .itemup{
+    background: #fff;
+    height: 1.5rem;
+    overflow: hidden;
+}
+.loanproduitem .itemleft{
+    float: left;
+    width: 1.5rem;
+    margin-right: 0.4rem;
+}
+.loanproduitem .itemleft img{
+     width: 1.5rem;
+    height: 1.5rem;
+}
+.loanproduitem .itemcenter{
+    width: 60%;
+    float: left;
+    position: relative;
+}
+.loanproduitem .itemtitle{
+    font-size: 0.32rem;
+    color: #5d5d62;
+    padding: 0.16rem 0 0;
+}
+.itemdetail p{
+    color: #a7a7a7;
+    font-size: 0.26rem;
+    line-height: 0.37rem;
+}
+.itemdown span{
+     width: 79%;
+    display: inline-block;
+    vertical-align: top;
+}
+.loanproduitem .itemdown{
+    background: #fffbf5;
+    padding: 0.14rem 0;
+    color: #717070;
+    font-size: 0.26rem;
+}
+.itemdown img{
+     width: 5%;
+    margin: 0 2%;
+}
+.dltprodulistcont .sortbox{
+    position: absolute;
+    right: 0.2rem;
+    top: 0rem;
+    color:#fff;
+    font-size: 0.3rem;
+    line-height: 1rem;
+    vertical-align: middle;
+    font-weight: lighter;
+}
+.dltprodulistcont .sortimg{
+    position: absolute;
+    right: 1.3rem;
+    top: 0.05rem;
+    width: 0.22rem;
+    height: 0.3rem;
+    color:#fff;
+    font-size: 0.28rem;
+}
+.sortimg img{
+    width: 100%;
+    height: 100%;
+}
+/* ---------------我的申请-----------------*/
+.produinfo .sublab{
+    font-size: 0.24rem;
+    color:#6e6e6e;
+    margin-bottom: 0.12rem;
+}
+.myappplyinfo{
+    margin-left: 0.32rem;
+}
+.myapplycont{
+   padding-top: 0.3rem;
+   padding-bottom: 0.6rem;
+}
+.produinfo .sublab2{
+     
+    font-size: 0.26rem;
+    color:#6e6e6e;
+    margin-bottom: 0.12rem;
+}
+.mybowserinfo{
+    margin-left: 0.32rem;
+}
+.mybowserinfo .sublabright{
+    margin-left: 0.8rem;
+}
+.mybrowsercont{
+ 
+   padding-bottom: 0.6rem;
+}
+.mybrowsercont .curdate{
+  text-align: center;
+  margin-bottom: 0.1rem;
+  color:#6E6E6E;
+
+}
+.myappcont{
+   
+   padding-bottom: 0.6rem;
+}
+
+/*--------------个人信息-------------*/
+ 
+.myinfocont .toplab{
+   text-align: center;
+   height: 0.72rem;
+   line-height: 0.72rem;
+   font-size: 0.24rem;
+   color:#999;
+}
+.myinfocont .infobox{
+    position: relative;
+    width: 100%;
+   
+    border: 1px solid #dbdbdb;
+    border-radius: 0.1rem;
+    background: #fff;
+}
+.myinfocont .infobox  .identitylab{
+    font-size: 0.28rem;
+}
+.myinfocont .infobox .title{
+    height: 0.7rem;
+    font-size: 0.30rem;
+    text-indent: 0.16rem;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    line-height: 0.7rem;
+    color: #292e32;
+
+}
+.myinfocont .infobox .selectbox .presword{
+   position: absolute;
+   left: 0.46rem;
+   top: 60%;
+   width: 0.25rem;
+   height: 0.28rem;
+}
+.myinfocont .infobox .selectbox .presword img{
+    width: 100%;
+    height: 100%;
+}
+.myinfocont .infobox .selectbox .nextsword{
+   position: absolute;
+   right: 0.46rem;
+   top: 60%;
+   width: 0.25rem;
+   height: 0.28rem;
+}
+.myinfocont .infobox .selectbox .nextsword img{
+    width: 100%;
+    height: 100%;
+}
+
+.myinfocont .infobox .centerbox{
+    position: absolute;
+    left:50%;
+    top: 55%;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-left: -0.9rem;
+    margin-top: -1rem;
+    text-align: center;
+    font-style: 0.32rem;
+
+}
+.myinfocont .infobox .selectbox{
+   position: relative;
+   overflow: hidden;
+}
+.myinfocont .infobox .centerbox img{
+    width: 100%;
+    height: 100%;
+}
+.myinfocont  .infoitem{
+    width: 100%;
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-indent: 0.15rem;
+    font-size: 0.3rem;
+    background: #fff;
+}
+  .infoitem .rightinput{
+    float: right;
+ 
+
+}
+  .infoitem .rightinput input{
+    width: 3rem;
+    height: 0.8rem;
+    border:none;
+    text-align: right;
+    margin-right: 0.6rem;
+    font-size: 0.32rem;
+    color:#666;
+    font-weight: normal;
+
+
+}
+.myinfocont .infoitemcont{
+   border-radius: 0.15rem;
+   font-size: 0.32rem;
+   color:#666;
+   font-weight: normal;
+}
+.infoitemcont  .infoselect .sexlab{
+    color: #666!important;
+}
+.noborder{
+    border: none!important;
+}
+.infoitemcont .infoselect .icon{
+    display: block;
+    position: absolute;
+    left:0.32rem;
+    top:0.05rem;
+    width: 0.3rem;
+    height: 0.35rem;
+}
+.infoitemcont .infoselect{
+    position: relative;
+     width: 100%;
+     border-bottom: 1px solid rgba(229, 229, 229, 1);
+    height: 0.88rem;
+    line-height: 0.88rem;
+    font-size: 0.3rem;
+    background: #fff;
+    font-weight: normal;
+    text-indent: 0.15rem;
+}
+.infoitemcont .infoselect .icon img{
+    width: 100%;
+    height: 100%;
+}
+ 
+.infoitemcont .infoselect .righttxt{
+   float: right;
+   margin-right: 0.7rem;
+   color: #bfbfbf;
+   color: #666;
+}
+.infoitemcont .infoselect .sword{
+    position: absolute;
+    right: 0.4rem;
+    top:0.04rem;
+    width: 0.16rem;
+    height: 0.27rem;
+}
+.infoitemcont .infoselect .sword img{
+    width: 100%;
+    height: 100%;
+}
+.picker .picker-panel .picker-choose .confirm {
+    color: #f10180!important; 
+}
+.myinfocont .identitybox{
+    position: relative;
+    white-space: nowrap;
+    overflow-x:auto;
+    padding: 0.3rem;
+
+}
+.myinfocont .identitybox .useritem{
+   display: inline-block;
+   white-space: nowrap;
+   position: relative;
+   width: 2rem;
+   height: 2rem;
+   background: #fff;
+   border-radius: 10px 10px 10px 10px;
+   border: solid 1px rgba(228, 232, 235, 1);
+   text-align: center;
+   margin-right: 0.25rem;
+}
+.identitybox .useritem .headicon{
+    margin-top: 0.2rem;
+    width: 1.15rem;
+    height: 1.12rem;
+
+}
+.identitybox .useritem .headicon img{
+    width: 100%;
+    height: 100%;
+}
+.identitybox .useritem  .lab{
+    margin-top: 0.1rem;
+    font-size: 0.24rem;
+    color:#999;
+}
+.identitybox .useritem:last-child{
+    margin-right: 0; 
+}
+ .useritem .selectedicon{
+    position: absolute;
+    display: none;
+    right: 0;
+    top:0;
+    width:0.3rem;
+    height: 0.3rem; 
+  
+}
+.infoitemcont .titlebox{
+    height: 0.81rem;
+    font-size: 0.24rem;
+    color: #999;
+    text-indent: 0.3rem;
+    line-height: 1rem;
+}
+ .useritem .selectedicon img{
+    width:100%;
+    height: 100%;
+}
+.identityselected{
+
+    background-color: rgba(242, 254, 255, 1)!important;
+    color:#333!important;
+}
+.errortips{
+    height: 0.5rem;
+    font-size: 0.24rem;
+    color:#e85352;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    text-indent: 0.3rem;
+    text-align: left;
+    background-color: rgba(255, 229, 229, 1);
+}
+/*------------时间选择控件--------------*/
+/*riqi*/
+.android-ics .dw {
+  color: #fe681c;
+}
+.android-ics .dwv {
+  border-bottom: 2px solid #fe681c;
+}
+.android-ics .dw .dwwol {
+  border-top: 2px solid #dbdbdb;
+  border-bottom: 2px solid #dbdbdb;
+}
+.android-ics .dw .dwb-a {
+    background: #fe681c;
+}
+.dwb-n {
+  display:none;
+}
+.dwbc-p .dwbw {
+    width: 50%;
+}
+.android-ics.light .dww .dw-li.dw-v.dw-sel {
+    color: #fe681c!important;
+}
+
+
+.android-ics .dwv {
+  display:none;
+}
+.android-ics .dwc {
+    margin: 0;
+    padding: 16px 0 10px 0;
+    width: 100%;
+}
+td {
+  border:none;
+}
+.android-ics .dwwl {
+  margin:0;
+}
+table{
+  width:100%;
+}
+.dwwc {
+  padding:0;
+}
+.dw {
+  position: fixed;
+  left:0!important;
+  bottom:0!important;
+  width: 100%;
+  top: initial!important;
+}
+.android-ics .dwwr {
+    padding: 0;
+    width: 100%!important;
+}
+.android-ics .dw .dwwol {
+    width: 100%;
+    left: 0;
+}
+.android-ics .dw .dwwol {
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+.android-ics.light .dwb-s .dwb, .android-ics.light .dwb-n .dwb {
+    border-right: none;
+}
+.dwbg {
+    background: #fff;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+.dwl {
+  display:none;
+}
+.android-ics .dw .dwb {
+  height: 42px;
+  line-height: 42px;
+}
+.android-ics.light .dwb {
+  color: #333;
+}
+.android-ics .dww .dw-li.dw-hl {
+  background: none;
+}
+.infoselect .dateinput{
+    position: absolute;
+    right: 0.7rem;
+    top:0.05rem;
+    margin-left: 1.2rem;
+    height: 0.8rem;
+    width: 3rem;
+    text-align: right;
+    font-size: 0.32rem;
+    color: #333;
+    font-weight: normal;
+}
+.rightdateinput{
+    float: right;
+    width: 2rem;
+    height: 0.8rem;
+}
+.android-ics .dw .dwb-a{
+    background: #F10180!important;
+}
+/* --------------------时间选择控件-----------------*/
+ 
+.infopopDialog{
+    position: absolute;
+    width: 5.8rem;
+    height: 8.2rem;
+    top:1.6rem;
+    left: 15%;
+    background: #fff;
+    
+    font-size: 0.26rem;
+    color:#666;
+    z-index: 1002;
+    border-radius: 0.1rem;
+}
+.infopopDialog .tophead{
+   position: relative;
+   width:100%;
+   height: 3rem;
+   background-image: linear-gradient(25deg, 
+        rgba(255, 78, 133, 1) 0%, 
+        rgba(254, 130, 103, 1) 50%, 
+        rgba(252, 181, 73, 1) 100%), 
+    linear-gradient(
+        rgba(255, 80, 132, 1), 
+        rgba(255, 80, 132, 1));
+    background-blend-mode: normal, 
+        normal;
+    box-shadow: inset 0px -2px 4px 0px 
+        rgba(241, 1, 128, 0.3);
+    border-radius: 0.1rem;
+}
+.infopopDialog .logobox{
+  position: absolute;
+  top: 1rem;
+  left: 1.3rem;
+  width: 3.2rem;
+  height: 3.2rem;
+}
+.infopopDialog .logobox img{
+  width: 100%;
+  height: 100%;
+}
+.infopopDialog .title{
+    position: absolute;
+    top: 4.6rem;
+    left: 0;
+    width: 100%;
+    font-size: 0.36rem;
+    text-align: center;
+    color:#000;
+}
+.infopopDialog .subtitle{
+    position: absolute;
+    top: 5.2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color:#333;
+    font-size: 0.28rem;
+}
+.infopopDialog .qrbotlab{
+    position: absolute;
+    bottom: 0.2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.24rem;
+    color:#888;
+}
+.infopopDialog .qrclose{
+   position: absolute;
+   bottom: -0.8rem;
+   text-align: center;
+   width: 0.5rem;
+   height: 0.5rem;
+   left: 50%;
+   margin-left: -0.25rem;
+}
+.infopopDialog .qrclose img{
+    width: 100%;
+    height: 100%;
+}
+.infopopDialog .dialogbtnbox{
+  margin-top: 0.3rem;
+  padding: 0 0.2rem;
+}
+.infopopDialog .content{
+ padding: 0 0.3rem;
+}
+.infopopDialog .dialogbtn{
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  font-size: 0.32rem;
+  color:#fff;
+  background: #F10180;
+  border-radius: 0.2rem;
+  text-align: center;
+}
+
+
+/*----------------一键贷款-------------------*/
+
+.oneloancont{
+    padding: 0.3rem 0.15rem;
+    position: relative;
+    border: 1px solid #dbdbdb;
+    border-radius: 0.15rem;
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 0.2rem;
+}
+.oneloancont .title{
+    font-size: 0.32rem;
+    color:#333;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+
+}
+.oneloancont .inputbox{
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    background: rgb(237,239,240);
+    border:1px solid #dbdbdb;
+    border-radius: 0.1rem;
+    margin-bottom: 0.3rem;
+}
+.oneloancont .inputbox input{
+    position: relative;
+    height: 0.9rem;
+    width: 100%;
+    border: none;
+    font-size: 0.28rem;
+    border: none;
+    font-size: 0.32rem;
+    text-indent: 0.6rem;
+    background: rgb(237,239,240);
+}
+.oneloancont .loantimetitle{
+    font-size: 0.32rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+.loantimebox{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-left: 0.07rem;
+}
+.oneloancont .loantimeitem{
+    float: left;
+    width: 2rem;
+    height:0.6rem;
+    border:1px solid #dbdbdb;
+    text-align: center;
+    line-height: 0.6rem;
+    border-radius: 0.15rem;
+    margin-right: 0.3rem;
+    margin-bottom: 0.4rem;
+    background: rgb(237,239,240);
+    font-size: 0.24rem;
+
+
+}
+ 
+.loantimeitemselected{
+  border:1px solid #F10180 !important; 
+  color:#f10180; 
+}
+.loantimeitemselected{
+    
+}
+.loancont .btnbox{
+  padding: 0.6rem 0.5rem;
+  position: relative;
+  
+
+}
+.loancont .btnbox .oneloanbtn{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 1rem;
+  color:#fff;
+  background: #F10180;
+  border-radius: 0.15rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.32rem;
+  margin-bottom: 1rem;
+   
+}
+.loancont .btnbox .oneloanbtn:active{
+ background: #e12180
+}
+.oneloancont .inputbox .icon{
+    position: absolute;
+    left: 0.2rem;
+    top: 0.31rem;
+    width: 0.18rem;
+    height: 0.24rem;
+    z-index: 1000;
+
+}
+.oneloancont .inputbox .icon img{
+    width: 100%;
+    height:100%;
+}
+ .tipdialog{
+    position: absolute;
+    top:100px;
+    width: 90%;
+    left:5%;
+    background:#fff;
+    overflow: hidden;
+    border-radius: 0.1rem;
+    z-index: 1001;
+}
+.tipicon{
+    position: relative;
+    margin:0 auto;
+    margin-top: 0.45rem;
+    width: 1.05rem;
+    height: 1.05rem;
+}
+.tipicon img{
+    width: 100%;
+    height: 100%;
+}
+.tiplab{
+    margin-top: 0.2rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.28rem;
+    color:#5a5959;
+}
+.btn{
+    margin:0 auto;
+    margin-top: 0.5rem;
+    
+    
+    height: 0.9rem;
+    background: #F10180;
+    
+    text-align: center;
+    line-height: 0.9rem;
+    font-size: 0.35rem;
+    color:#fff;
+    cursor: pointer;
+}
+.btn:active{
+    background: #F0508C;
+}
+.agrementbox{
+    text-align: center;
+    margin-top: 0.82rem;
+    vertical-align: bottom;
+    font-size: 0.32rem;
+}
+
+
+
+
+/*--------------------完善基本信息---------------*/
+.baseinfocont{
+    position: relative;
+    background: #fff; 
+    font-size: 0.32rem;
+}
+.baseinfocont .baseinfoinputbox{
+  position: relative;
+   padding: 0 0.3rem;
+   height: 0.9rem;
+   margin: 0 auto;
+   border-bottom: 1px solid #E5E5E5;
+   line-height: 0.9rem;
+}
+.baseinfocont .baseinfoinputbox input{
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  font-size: 0.32rem;
+  color:#333;
+}
+.baseinfocont .baseinfotitle{
+    text-align: left;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.3rem;
+    color: #292e32;
+    text-indent: 0.3rem;
+    border:1px solid #E5E5E5;
+}
+.baseinfocont .useritem{
+    position: relative;
+    display: inline-block;
+    width: 32%;
+    width: 2rem;
+    height: 2.2rem;
+    text-align: center;
+    border:1px solid #E5E5E5;
+    margin-right: 0.35rem;
+    color: #999999;
+    font-size:0.28rem;
+}
+.baseinfocont .usertypeicon{
+    width: 1.15rem;
+    height: 1.12rem;
+    
+    text-align: center;
+    margin:0 auto;
+    margin-top: 0.24rem;
+
+
+}
+.baseinfoselectbox{
+    
+}
+.baseinfocont .usertypeicon img{
+    width: 100%;
+    height: 100%;
+}
+.usertypelab{
+    margin-top: 0.2rem;
+
+}
+.partingbox{
+    width:100%;
+    height: 0.3rem;
+    background: rgb(235,235,241);
+}
+.baseinfocont .btnbox{
+    position: relative;
+   
+    padding: 0 0.3rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+.baseinfocont .btnbox .btn{
+    width: 100%;
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.3rem;
+    color:#fff;
+    background: #F10180;
+    border-radius: 0.15rem;
+}
+.baseinfocont .btnbox .btn:active{
+    background: #e10180;
+}
+.baseinfocont .baseselectbox{
+  padding: 0.4rem  0.3rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.baseinfoseleced{
+    color:#F10180;
+ 
+}
+.baseinfoinputbox .leftlab{
+   position: absolute;
+   left:0.3;
+   top:0;
+   color: #000;
+   line-height: 1.1rem;
+
+}
+.baseinfocont .toptips{
+   height: 0.72rem;
+   text-align: center;
+   background-color: rgba(255, 247, 194, 1);
+   color:#f39800;
+   font-size: 0.24rem;
+   line-height: 0.72rem;
+}
+/* ------------------反馈信息--------------*/
+.feedbackcont{
+   padding: 0.3rem 0.3rem;
+    color:#666;
+}
+.feedbackcont .feedtagbox{
+   position: relative;
+   overflow: hidden;
+}
+.feedbackcont .feedtagbox .tagitem{
+    width: 1.4rem;
+    height: 0.5rem;
+    float: left;
+    background: #fff;
+    border:1px solid #dbdbdb;
+   
+    text-align: center;
+    line-height: 0.5rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+   
+
+}
+.feedbackcont .tagitembox{
+    width: 33%;
+    text-align: center;
+    float: left;
+}
+.feedbackcont .textareabox{
+    width: 100%;
+   padding: 0.5rem 0;
+   height: 4rem;
+   overflow: hidden;
+   position: relative;
+}
+.feedbackcont .textareabox textarea{
+    width: 100%;
+    height: 100%;
+     resize : none;
+     text-align: left;
+     text-indent: 10px;
+     color:#666;
+     padding: 0.1rem;
+}
+.feedbackcont .btnbox{
+    padding: 0.3rem 0rem;
+}
+.feedbackcont .btnbox .btn{
+   width: 100%;
+   height: 0.8rem;
+   background: #F10180;
+   color:#fff;
+   font-size: 0.32rem;
+   text-align: center;
+   line-height: 0.8rem;
+}
+.feedbackcont .btnbox .btn:active{
+   background: #e80180
+}
+.dltprodulistcont .selectsortbox{
+ position: absolute;
+ top:1.8rem;
+ left:0;
+ width: 100%;
+ overflow: hidden;
+ z-index: 1000;
+ background: #fff;
+ padding: 0 0.1rem;
+color:#666;
+ z-index: 1001
+}
+.dltprodulistcont .selectsortbox .sortitem{
+  width: 100%;
+  height: 1rem;
+  font-size: 0.32rem;
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  text-align: left;
+  line-height: 1rem;
+ 
+  text-indent: 10px;
+}
+.sortitemselected{
+  color:#F10180;
+}
+.applyprocess2{
+   
+    margin:0 auto;
+    text-align: center;
+}
+.processimgbox{
+    margin:0 auto;
+    text-align: center;
+}
+.t20{
+    margin-top: 0.2rem;
+}
+.redtips{
+    position: relative;
+    color: #fd3259;
+    font-size:0.36rem;
+    margin-left: -0.13rem;
+    top: 0.05rem;
+     
+}
+.nodataTips{
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color:#666;
+    font-size: 0.32rem;
+}
+.bluetxt{
+    color: #3385ff; 
+}
+.qrcodebox{
+    position: fixed;
+    right: 0rem;
+    top: 4.4rem;
+    width: 2.3rem;
+    overflow: hidden;
+    
+    background: #fff;
+    z-index: 1000;
+    border:1px solid #E5E5E5;
+    text-align: center;
+    font-size: 0.24rem;
+    color:#333;
+}
+.qrcodebox .qrtitle{
+   margin-top: 0.1rem;
+ 
+   font-size: 0.28rem;
+}
+.qrcodebox .qrimg{
+
+    width: 2.1rem;
+   height: 2.1rem;
+   margin:0 auto;
+   margin-top: 0.1rem;
+}
+.qrcodebox .qrimg img{
+    width: 100%;
+    height: 100%;
+}
+.qrlabbox{
+    margin-top: 0.08rem;
+    margin-bottom: 0.1rem;
+}
+.popqrbox{
+    position: fixed;
+    right: 0rem;
+    top: 7.6rem;
+    width: 1rem;
+    overflow: hidden; 
+    z-index: 1001;
+}
+.popqrbox .popqrbtn{
+    width: 1rem;
+    height: 1rem;
+}
+.popqrbox .popqrbtn img{
+    width: 100%;
+}
+.picker .picker-panel .picker-choose .confirm{
+width: 1.5rem;
+height: 0.8rem;
+display: inline-block;
+ 
+text-align: center;
+ 
+color:rgba(253, 40, 98, 1)!important;
+font-size: 0.36rem;
+}
+.picker .picker-panel .picker-choose .cancel{
+font-size: 0.36rem;
+}
+.xpdialog{
+position: fixed;
+width: 6rem;
+height: 8rem;
+top: 1.8rem;
+left: 50%;
+margin-left: -3rem;
+background: #fff;
+font-size: 0.26rem;
+color: #666;
+z-index: 1002;
+border-radius: 0.1rem;  
+}
+.xpimgbox{
+position: absolute;
+left: 0;
+top: 0;
+width: 6rem;
+height: 8rem;
+
+}
+.xpimgbox img{
+width: 6rem;
+height: 8rem;
+}
+.xpdialog .xpclose{
+position: absolute;
+bottom: -0.8rem;
+text-align: center;
+width: 0.5rem;
+height: 0.5rem;
+left: 50%;
+margin-left: -0.25rem;
+}
+.xpdialog .xpclose img{
+width: 100%;
+height: 100%;
+}

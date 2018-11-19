@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head lang="cn">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="resources/css/media.min.css">
+         <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+        <title>产品列表</title>
+        <style>
+        </style>
+   </head>
+<body>
+
+  <div id="DltApp" class="dltprodulistcont" >
+  	 	 <div class="produlistNav">
+      	 <a class="backhome" href="index.html">返回首页</a>
+      	 贷款产品列表
+      	 </div>
+      	 <div class="dropdowncont">
+      	 	<div id="dropmenuleft" class="dropmenu">
+      	 		<span id="dropmenulableft" type="0">金额不限</span>
+      	 		<i ></i>
+      	 	</div>
+      	 	<div id="dropmenuright" class="dropmenu">
+      	 		<span id="dropmenulabright" type="0">小额急速贷</span>
+      	 		<i ></i>
+      	 	</div>
+      	 </div>
+      	 <div id="dropmenulistleft" class="dropmenulist" style="display:none ">
+      	 	 <ul class="produselectlist">
+      	 	 	<li v-for="item in dropmenuleftlist" v-bind:type="item.type">{{item.name}}</li>
+      	 	 	 
+      	 	 </ul>
+      	 </div>
+      	 <div id="dropmenulistright" class="dropmenulist" style="display:none ">
+      	 	 <ul class="produselectlist">
+      	 	 	<li v-for="item in dropmenurightlist" v-bind:type="item.type">{{item.name}}</li>
+      	 	 	 
+      	 	 </ul>
+      	 </div>
+      	 <div class="produtoptips">
+      	 	<img src="resources/images/icon/icontips.png" />
+      	 	<span>申请更多产品，贷款成功率更高！</span>
+      	 </div>
+        <div class="produlistcont">
+        	 <div class="loanproduitem" v-for="item in loanprodulist">
+        	 	<div class="itemup">
+        	 		<div class="itemleft">
+        	 			<img v-bind:src="item.logo_url"/>
+        	 		</div>
+        	 		<div class="itemcenter">
+        	 			<div class="itemtitle">{{item.platform}}-{{item.title}}</div>
+        	 			<div class="itemdetail">
+        	 				<p><span>可贷额度：</span>{{item.loan_min}}-{{item.loan_max}}</p>
+        	 				<p><span>参考<span v-if="item.rate_type==1">月</span> <span v-if="item.rate_type==2">日</span >利率：</span><i>{{item.default_rate}}</i></p>
+        	 			</div>
+        	 		</div>
+        	 	</div>
+        	 	<div class="itemdown">
+        	 		<img src="resources/images/icon/quoteleft2.png"/>
+        	 		<span>{{item.sub_title}}</span>
+        	 		 <img src="resources/images/icon/quoteright2.png"/>
+        	 	</div>
+        	 </div>
+        </div>
+
+
+  </div>
+  
+  <script type="text/javascript" src="resources/js/zepto.min.js"></script>
+  <script type="text/javascript" src="resources/js/vue.min.js"></script>
+  <script type="text/javascript" src="resources/js/common.js"></script>
+  <script type="text/javascript">
+  	
+
+  	 var DltApp = new Vue({
+        el: '#DltApp',
+        data: {
+          dropmenuleftlist:[],
+          dropmenurightlist:[],
+          loanprodulist:[]//产品列表分类
+         
+        },
+       created:function(){
+         console.log("create");
+       },
+       updated:function(){
+         console.log("update");
+       },
+       Destroyed:function(){
+        console.log("destroyed");
+       },
+       methods:{
+          //渲染下拉菜单列表
+          renderDropLeftList:function(data){
+          	this.dropmenuleftlist=data;
+          },
+          renderDropRightList:function(data){
+          	this.dropmenurightlist=data;
+          },
+          //渲染产品列表数据
+          renderprodulist:function(data){
+            this.loanprodulist=data;
+          }
+        }
+      });
+
+     /* -----------------事件处理 ---------------*/
+     $("#dropmenuleft").on("click",function(){
+         $("#dropmenulistleft").show();
+         $("#dropmenulistright").hide();
+     })
+     $("#dropmenuright").on("click",function(){
+         $("#dropmenulistright").show();
+          $("#dropmenulistleft").hide();
+     })
+  	 $("#dropmenulistright").on("click","li",function(){
+  	 	  var type=$(this).attr("type");
+  	 	  var str=$(this).text();
+  	 	  $("#dropmenulabright").attr("type",type);
+  	 	  $("#dropmenulabright").text(str)
+  	 	  $("#dropmenulistright").hide();
+  	 })
+  	 $("#dropmenulistleft").on("click","li",function(){
+  	 	  var type=$(this).attr("type");
+  	 	  var str=$(this).text();
+  	 	  $("#dropmenulableft").attr("type",type);
+  	 	  $("#dropmenulableft  ").text(str)
+  	 	  $("#dropmenulistleft").hide();
+  	 })
+     var produlist=[];
+     for(var i=1;i<=5;i++){
+        var item=  {
+         "product_id": i, 
+         "title": "信用贷", // 产品名称
+         "sub_title": "0门槛，首借享3天免息", // 简要描述 宣传语
+         "logo_url": "resources/images/produ/produ"+i+".png", // 产品图标
+         'platform':'用钱宝', // 借贷平台
+         "rate_type": "1", // 利率类型 1为月2为日
+         "default_rate": "0.5", // 默认显示的利率
+         "loan_min": "500", // 最小额度
+         "loan_max": "15000", // 最高额度
+         "jump_type": "1", // 跳转类型，0原生1h5
+         "jump_url": "1", // 跳转类型，0原生1h5
+         "product_url":'' // 跳转类型为h5时使用
+       };
+       produlist.push(item);
+     }
+
+   DltApp.renderprodulist(produlist);//贷款产品列表
+
+   var selectleftlist=[
+    {"type":1,"name":"全部不限"},
+    {"type":2,"name":"2000以下"},
+    {"type":3,"name":"2000-5000"},
+    {"type":4,"name":"5000-10000"},
+    {"type":5,"name":"10000-20000"},
+    {"type":6,"name":"20000-50000"},
+    {"type":7,"name":"50000以上"},
+   ];
+    DltApp.renderDropLeftList(selectleftlist);//下拉列表
+
+   var selectrightlist=[
+     {"type":1,"name":"所有贷款类型"},
+     {"type":2,"name":"青春贷"},
+     {"type":3,"name":"小额极速贷"},
+     {"type":4,"name":"用淘宝贷款"},
+     {"type":5,"name":"工薪贷"},
+     {"type":5,"name":"企业主贷"},
+     {"type":6,"name":"放款快"},
+     {"type":7,"name":"信用卡代还"},
+     {"type":8,"name":"抵押贷款"},
+
+   ];
+   DltApp.renderDropRightList(selectrightlist);//下拉列表
+
+  </script>
+</body>
+</html>

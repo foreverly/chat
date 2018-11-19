@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head lang="cn">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="resources/css/media.min.css">
+         <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+        <title>首页</title>
+        <style>
+        </style>
+   </head>
+
+   <body>
+     <div id="dltapp" class="dltcont">
+          
+         <section class="   dlttopNav">
+           <div class="menu"></div>
+           <div class="title">贷款</div>
+           <div class="kefu"></div>
+         </section>
+         <div class="dlttopline"><img src="http://m.jiedianqian.com/images/bg-title-01.png"></div>
+         
+         <section class=" dltsec loancategory clearbox">
+             <div class="loan-produlist clearbox">
+                <div  class="loanitem" v-bind:loanid="item.id" v-bind:loankinds="item.id" v-for="item in loankinds">
+                  <div class="loankindsitemcont" v-bind:loanid="item.id"  v-on:click="loankindsclick">
+                    <div class="produlogo"><img  v-bind:src="item.icon"/></div>
+                    <div class="produ-title">
+                      <span>{{item.tag_name}}</span>
+                    </div>
+                  </div>
+                </div>
+
+             </div>
+         </section> 
+         <section class="dltsec adpos" style="display: block;">
+           <div class="bannerbox">
+              <img src="resources/images/banner/banner3.png"/>
+           </div>
+         </section>
+         <section class="dltsec loanrangekind">
+            <div class="loanrangecont clearbox" >
+              <div class="loanrangeitem"  v-for="item in loanrangelist">
+                  <img  v-bind:src="item.icon"/>
+              </div>
+            </div>
+         </section>
+          <div class="produline">
+            <img  src="resources/images/icon/loanproduline.png"/>
+          </div>
+         <section class="dltsec loanprodu noborder">
+            <div class="producont">
+               <div class="produitem" v-for="item in loanprodulist" v-bind:product_id="item.product_id">
+                 <div class="produitemtop clearbox">
+                    <div class="loanprodulogo">
+                      <img  v-bind:src="item.logo_url"/>
+                    </div>
+                    <div class="produinfo">
+                      <div class="title">{{item.platform}}-{{item.title}}</div>
+                      <div class="edu">可贷额度:{{item.loan_min}}-{{item.loan_max}}</div>
+                      <div class="lilv">参考<span v-if="item.rate_type==1">月</span> <span v-if="item.rate_type==2">日</span >利率：{{item.default_rate}}</div>
+                    </div>
+                 </div>
+                 <div class="produitembot">
+                    <div class="produadvant txtellipsis">{{item.sub_title}}</div>
+                 </div>
+               </div>
+            </div>
+
+         </section>
+         <section class="dltsec loadnservice "></section>
+         <section class="dltsec strategy"></section>
+         <section class="dltsec footer"></section>
+     </div>
+
+
+     <script type="text/javascript" src="resources/js/zepto.min.js"></script>
+     <script type="text/javascript" src="resources/js/vue.min.js"></script>
+    <script type="text/javascript">
+      
+     var DltApp = new Vue({
+        el: '#dltapp',
+        data: {
+          loankinds:[],//贷款超市列表
+          bannerlist:[],//banner列表
+          loanrangelist:[],//贷款金额分类
+          loanprodulist:[],//产品列表分类
+          loandetail:[],//贷款详情
+        },
+       created:function(){
+         console.log("create");
+       },
+       updated:function(){
+         console.log("update");
+       },
+       Destroyed:function(){
+        console.log("destroyed");
+       },
+       methods:{
+          //渲染贷款超市数据
+          renderloankinds:function(data){
+            this.loankinds=data;
+          },
+          //渲染banner图片数据
+          renderbannerlist:function(data){
+            this.bannerlist=data;
+          },
+          //渲染贷款金额数据
+          renderloanrange:function(data){
+            this.loanrangelist=data;
+          },
+          //渲染产品列表数据
+          renderprodulist:function(data){
+            this.loanprodulist=data;
+          },
+          loankindsclick:function(e){
+            console.log(e);
+          },
+
+        }
+      })
+
+      /*  ---------------事件处理-------------------*/ 
+      //贷款超市
+      $(".loan-produlist").on("click",".loanitem",function(){
+          var loankinds=$(this).attr("loankinds");
+        window.location.href="produList.html?loankinds="+loankinds;
+
+      });
+ 
+     //事件处理 产品列表
+     $(".producont").on("click",".produitem",function(){
+        var product_id=$(this).attr("product_id");
+        window.location.href="produDetail.html?product_id="+product_id;
+     })
+    
+       
+    var loankindsdata=[];
+    var tag_name=["","贷款大全","小额极速贷","青春贷","工薪贷","企业主贷","用淘宝贷款",
+    "信用卡代还","抵押贷款","办信用卡","新品专区"];
+   for (var i=1;i<=10;i++)
+   {
+     var item={
+      "id":i,
+      "tag_name":tag_name[i],
+      "default_loan_money":i,
+      "icon":"resources/images/icon/loankinds"+i+'.png',
+      "info":"贷款详情"+i,
+      "activity_url":"LoanDetail.html",
+      "loan_range":"200"+i,
+      "sort":"1",
+      "status":"1"
+     }
+     loankindsdata.push(item);
+   }
+   
+   DltApp.renderloankinds(loankindsdata);//渲染贷款超市数据
+   var bannerlist={};
+   DltApp.renderbannerlist(bannerlist);//banner图片数据
+
+   var loanrange=[];
+   for(var i=1;i<=4;i++){
+    var item={
+      "type":i,
+      "icon":"resources/images/range/range"+i+".png",
+      "info":"贷款范围"+i,
+      "range":"2000-500",
+    };
+    loanrange.push(item);
+   }
+   DltApp.renderloanrange(loanrange);//贷款金额数就
+
+
+ 
+
+     var produlist=[];
+     for(var i=1;i<=5;i++){
+        var item=  {
+         "product_id": i, 
+         "title": "信用贷", // 产品名称
+         "sub_title": "0门槛，首借享3天免息", // 简要描述 宣传语
+         "logo_url": "resources/images/produ/produ"+i+".png", // 产品图标
+         'platform':'用钱宝', // 借贷平台
+         "rate_type": "1", // 利率类型 1为月2为日
+         "default_rate": "0.5", // 默认显示的利率
+         "loan_min": "500", // 最小额度
+         "loan_max": "15000", // 最高额度
+         "jump_type": "1", // 跳转类型，0原生1h5
+         "jump_url": "1", // 跳转类型，0原生1h5
+         "product_url":'' // 跳转类型为h5时使用
+       };
+       produlist.push(item);
+     }
+
+   DltApp.renderprodulist(produlist);//贷款产品列表
+
+ /* -------------- 接口请求 --------------*/
+   //获取产品分类列表数据
+   function getloankindsData(){
+       $.ajax({
+          type: "POST",
+          url: "/api/web/v1/tags/list",
+          dataType: "jsonp",
+          data: {
+              access_data: access_data,
+              access_key: access_key
+          },
+          success: function(data) {
+               if (data.code == '200') {
+                var data=data.data;
+                 DltApp.renderloankinds(data);//渲染产品分类列表数据
+
+              } else {
+                 
+              }
+          },
+          error: function(r, m, e) {
+             // msgtip("返回失败");
+              return false;
+          }
+      });
+   }
+
+    </script>
+   </body>
+
+
+ </html>

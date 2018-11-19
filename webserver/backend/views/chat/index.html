@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="csrf-param" content="_csrf-backend">
+    <meta name="csrf-token" content="<?= Yii::$app->request->csrfToken ?>">
+    <title>沟通中</title>
+    <link rel="stylesheet" type="text/css" href="/css/chat/themes.css?v=2017129">
+    <link rel="stylesheet" type="text/css" href="/css/chat/h5app.css">
+    <link rel="stylesheet" type="text/css" href="/css/chat/fonts/iconfont.css?v=2016070717">
+    <script src="/qqFace/js/jquery.min.js"></script>
+    <script src="/js/chat/dist/flexible/flexible_css.debug.js"></script>
+    <script src="/js/chat/dist/flexible/flexible.debug.js"></script>
+    <script src="/qqFace/js/jquery.qqFace.js"></script>
+</head>
+<body ontouchstart>
+
+<style type="text/css">
+
+.chat-text{
+    line-height: 0.8rem;
+}
+
+.section-right .text{
+    background-color: #ADD8E6!important;
+}
+
+#more{
+    cursor: pointer;
+}
+
+.qqFace { margin-top: -190px; background: #fff; padding: 2px; border: 1px #dfe6f6 solid; }
+.qqFace table td { padding: 0px; }
+.qqFace table td img { cursor: pointer; border: 1px #fff solid; }
+.qqFace table td img:hover { border: 1px #0066cc solid; }
+
+</style>
+
+<?php $this->registerJsFile('@web/qqFace/js/jquery.min.js',                     ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?>
+<?php $this->registerJsFile('@web/js/chat/dist/flexible/flexible_css.debug.js', ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?> 
+<?php $this->registerJsFile('@web/js/chat/dist/flexible/flexible.debug.js',     ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?>
+<?php $this->registerJsFile('@web/qqFace/js/jquery.qqFace.js',                  ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?> 
+<?php $this->registerCssFile('@web/css/chat/themes.css?v=2017129',              ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?> 
+<?php $this->registerCssFile('@web/css/chat/h5app.css',                         ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?> 
+<?php $this->registerCssFile('@web/css/chat/fonts/iconfont.css?v=2016070717',   ['depends'=>['yii\bootstrap\BootstrapAsset']]) ?> 
+
+<div class='fui-page-group'>
+    <div class='fui-page chatDetail-page'>
+        <div class="chat-header flex">
+            <a class="icon icon-toleft t-48" href="/chat?fromid=<?= $fromid ?>"></a>
+            <span class="shop-titlte t-30"><i class="with-who"></i></span>
+            <span class="shop-online t-26"></span>
+            <span class="into-shop">进店</span>
+        </div>
+        <div class="fui-content navbar" style="padding:1.2rem 0 1.35rem 0;">
+            <div class="chat-content">
+                <p style="display: block;text-align: center;padding-top: 0.5rem" id="more" page=1><a>加载更多</a></p>
+                <p class="chat-time"><span class="time">2018-11-15</span></p>
+            </div>
+        </div>
+        <div class="fix-send flex footer-bar" style="margin-bottom: 50px;">
+            <i class="icon icon-emoji1 emotion t-50"></i>
+            <input class="send-input t-28" id="saytext" maxlength="200">
+            <input type="file" name="pic" id="file_up" style="display: none">
+            <i class="icon icon-add t-50 img_up" style="color: #888;"></i>
+            <span class="send-btn">发送</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    
+    var fromid = <?= $fromid ?>;
+    var toid = <?= $toid ?>;
+    var fromhead = '';
+    var tohead = '';
+    var online = 0;
+
+    var ws = new WebSocket("ws://127.0.0.1:8282");
+
+    // 接收消息
+    ws.onmessage = function(e){
+        var message = JSON.parse(e.data);
+
+        switch (message.type){
+            case 'init':
+                var bind = {};
+                bind.type = 'bind';
+                bind.fromid = fromid;
+
+                ws.send(JSON.stringify(bind));
+                getHead(); 
+
+                var online = {};
+                online.type = 'online';
+                online.toid = toid;
+                online.fromid = fromid;
+                ws.send(JSON.stringify(online));
+
+                changeNoRead();
+
+                break;
+            case 'text':
+                var content = message.data;
+
+                if (toid == message.fromid) {
+                    $(".chat-content").append(messageStr(content, 'left'));
+                    $(".chat-content").scrollTop(3000);
+                    changeNoRead();
+                }
+
+                break;
+            case 'say_img':
+                var content = message.data;
+
+                if (toid == message.fromid) {
+                    $(".chat-content").append(imgStr(content, 'left'));
+                    $(".chat-content").scrollTop(3000);
+                    changeNoRead();
+                }
+
+                break;
+            case 'save':
+                saveMessage(message);
+                break;
+            case 'online':
+                if (message.status == 1) {
+                    online = 1;
+                    $(".shop-online").text('在线');
+                }else{
+                    online = 0;
+                    $(".shop-online").text('离线');
+                }
+                break;
+        }        
+    }
+
+    $(".send-btn").on('click',function(){
+        var message = $(".send-input").val();
+        var content = {};
+
+        if (message == '') return;
+
+        content.type = 'say';
+        content.data = message;
+        content.fromid = fromid;
+        content.toid = toid;
+
+        // 发送消息
+        ws.send(JSON.stringify(content));
+        $(".send-input").val('');
+        $(".chat-content").append(messageStr(message));
+        $(".chat-content").scrollTop(3000);
+    })
+
+    // 监听回车事件
+    $(document).keyup(function(event){
+        if(event.keyCode == 13){
+            $(".send-btn").trigger("click");
+        }
+    });
+
+    // 点击更多
+    $("#more").on('click', function(){
+        var page = $(this).attr('page');
+        loadMessage(page);        
+    })
+
+    // 上传图片
+    $(".img_up").on('click', function(){
+        $("#file_up").click();
+    })
+
+    // 选择图片
+    $("#file_up").on('change', function(){
+        var formData = new FormData();
+        formData.append('fromid',   fromid); 
+        formData.append('toid',     toid); 
+        formData.append('fromid', fromid);
+        formData.append('online', online);
+        formData.append('file', $(this)[0].files[0]);
+
+        $.ajax({
+            url:'/chat/upload-img',
+            type:'POST',
+            data:formData,
+            dataType:'json',
+            cache:false,
+            processData:false,
+            contentType:false,
+            success:function(res){
+                if (res.code == 200) {
+                    var data = res.data;
+
+                    $(".chat-content").append(imgStr(data.img_url));
+                    $(".chat-content").scrollTop(3000);
+                    $("#file_up").val("");
+
+                    // 发给对方
+                    var img_message = {};
+                    img_message.type = 'say_img';
+                    img_message.data = data.img_url;
+                    img_message.fromid = fromid;
+                    img_message.toid = toid;
+
+                    ws.send(JSON.stringify(img_message));
+                }
+            }
+        })
+    })
+
+
+    $(function(){
+        $('.emotion').qqFace({
+
+            assign:'saytext', // 表情输入框
+
+            path:'/qqFace/arclist/' //表情存放的路径
+
+        });
+    })
+
+    $(".sub_btn").click(function(){
+
+        var str = $("#saytext").val();
+
+        $("#show").html(replace_em(str));
+
+    });
+
+    //查看结果
+    function replace_em(str){
+
+        str = str.replace(/\</g,'&lt;');
+
+        str = str.replace(/\>/g,'&gt;');
+
+        str = str.replace(/\n/g,'<br/>');
+
+        str = str.replace(/\[em_([0-9]*)\]/g,'<img src="/qqFace/arclist/$1.gif" border="0" />');
+
+        return str;
+    }
+
+    function changeNoRead(){
+        $.post(
+            '/chat/change-read',
+            {"fromid":fromid, "toid":toid},
+            function(e){
+
+            },'json'
+        );
+    }
+
+    function imgStr(img_url, type = 'right'){
+        var img_str = '<div class="img-box" style="width: 16em; height: 12em;"><img style="width: 100%; height: 100%;" src="'+img_url+'"></div>';
+        return messageStr(img_str, type);
+    }
+
+    function messageStr(content, type = 'right'){
+
+        var str = '<div class="chat-text section-'+type+' flex">';
+
+        switch (type){
+            case 'left':                
+                str += '<span class="char-img" style="background-image: url('+tohead+')"></span>';
+                str += '<span class="text"><i class="icon t-32"></i>'+replace_em(content)+'</span>';
+
+            break;
+
+            case 'right':
+                str += '<span class="text"><i class="icon t-32"></i>'+replace_em(content)+'</span>';
+                str += '<span class="char-img" style="background-image: url('+fromhead+')"></span>';
+
+            break;
+        }
+
+        str += '</div>';
+
+        return str;
+    }
+
+    /**
+    * 保存消息
+    */
+    function saveMessage(message){
+        $.post(
+            '/chat/save',
+            message,
+            function(){
+
+            },'json'
+        )
+    }
+
+    /**
+    * 获取聊天头像
+    */
+    function getHead(){
+        $.post(
+            '/chat/get-head',
+            {"fromid":fromid, "toid":toid},
+            function(e){
+                fromhead = e.data.frominfo.head_url;
+                fromname = e.data.frominfo.display_name;
+                tohead = e.data.toinfo.head_url;
+                toname = e.data.toinfo.display_name;
+
+                $(".with-who").text("与"+toname+"裸聊中");
+            },'json'
+        )
+    }
+
+    /**
+    * 获取历史消息
+    */
+    function loadMessage(page){
+        $.post(
+            '/chat/load-message',
+            {"fromid":fromid, "toid":toid, "page":page},
+            function(res){
+                var e = res.data;
+                var c = e.length;
+                var t = '';
+
+                for (var i = 0; i < c; i++) {
+                    // 发送者
+                    if (e[i].fromid == fromid) {
+                        if (e[i].type == 1) {
+                            t += messageStr(e[i].content, 'right');
+                        }else{
+                            t += imgStr(e[i].content, 'right');
+                        }                        
+                    }else{
+                        if (e[i].type == 1) {
+                            t += messageStr(e[i].content, 'left');
+                        }else{
+                            t += imgStr(e[i].content, 'left');
+                        }                        
+                    }
+                }
+
+                $("#more").after(t);
+                if (c == 10) {
+                    $("#more").attr('page', page*1+1);
+                }
+
+                $(".chat-content").scrollTop(3000);
+
+            },'json'
+        )
+    }
+
+</script>

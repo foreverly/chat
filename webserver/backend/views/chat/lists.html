@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="csrf-param" content="_csrf-backend">
+    <meta name="csrf-token" content="<?= Yii::$app->request->csrfToken ?>">
+    <title>沟通中</title>
+    <link rel="stylesheet" type="text/css" href="/css/chat/themes.css?v=2017129">
+    <link rel="stylesheet" type="text/css" href="/css/chat/h5app.css">
+    <link rel="stylesheet" type="text/css" href="/css/chat/fonts/iconfont.css?v=2016070717">
+    <link rel="stylesheet" type="text/css" href="/css/chat/chat_list.css">
+    <script src="/qqFace/js/jquery.min.js"></script>
+    <script src="/js/chat/dist/flexible/flexible_css.debug.js"></script>
+    <script src="/js/chat/dist/flexible/flexible.debug.js"></script>
+</head>
+<body>
+<div class='fui-page-group'>
+    <div class="fui-statusbar"></div>
+<div class='fui-page chat-page'>
+	<div class="fui-header">
+	    <div class="title">消息列表</div>
+	    <div class="fui-header-right"></div>
+	</div>
+
+	<div class="fui-content navbar chat-fui-content" style="padding-bottom: 2rem;"><!-- 
+		<div class="chat-list flex" >
+
+			<div class="chat-img"  style="background-image: url('/img/123.jpg')">
+				<span class="badge" style="top: -0.1rem;left: 80%;">1</span>
+			</div>
+			<div class="chat-info">
+				<p class="chat-merch flex">
+					<span class="title t-28">魔力克</span>
+					<span class="time">2017-12-14</span>
+				</p>
+				<p class="chat-text singleflow-ellipsis">你好</p>
+			</div>
+		</div> -->
+	</div>
+</div>
+</div>
+</body>
+<script>
+
+    var API_URL = "/chat/";
+    var fromid = <?= $fromid ?>;
+
+    var ws = new WebSocket("ws://127.0.0.1:8282");
+
+    // 接收消息
+    ws.onmessage = function(e){
+        var message = JSON.parse(e.data);
+
+        switch (message.type){
+            case 'init':
+                var bind = {};
+                bind.type = 'bind';
+                bind.fromid = fromid;
+
+                ws.send(JSON.stringify(bind));
+
+                break;
+            case 'text':
+                $(".chat-fui-content").html("");
+
+                refreshList();
+
+                break;
+            case 'say_img':
+                $(".chat-fui-content").html("");
+
+                refreshList();
+
+                break;
+            case 'save':
+                saveMessage(message);
+                break;
+            case 'online':
+                if (message.status == 1) {
+                    online = 1;
+                    $(".shop-online").text('在线');
+                }else{
+                    online = 0;
+                    $(".shop-online").text('离线');
+                }
+                break;
+        }        
+    }
+
+    $(function(){
+        refreshList();
+    })
+
+    function refreshList(){
+        $.post(
+            API_URL+"list",
+            {fromid:fromid},
+            function(res){
+                if (res.code == 200) {
+
+                    var data = res.data;
+                    var c = data.length;
+
+                    for (var i = 0; i < c; i++) {
+                        var str = '';
+
+                        str += '<a href="'+data[i]['chat_url']+'" target=_blank>';
+                        str += '<div class="chat-list flex" >';
+                        str += '<div class="chat-img"  style="background-image: url(\''+data[i]['head']+'\')">';
+                        if (data[i]['noread'] > 0) {
+                            str += '<span class="badge" style="top: -0.1rem;left: 80%;">'+data[i]['noread']+'</span>';
+                        }                        
+                        str += '</div>';
+                        str += '<div class="chat-info">';
+                        str += '<p class="chat-merch flex">';
+                        str += '<span class="title t-28">'+data[i]['fromname']+'</span>';
+                        str += '<span class="time">'+data[i]['created_time']+'</span>';
+                        str += '</p>';
+                        if (data[i]['type'] == 1) {
+                            var content = data[i]['content'];
+                        }else{
+                            var content = '[新图片]';
+                        }
+                        str += '<p class="chat-text singleflow-ellipsis">'+content+'</p>';
+                        str += '</div>';
+                        str += '</div>';
+                        str += '</a>';
+
+                        $(".chat-fui-content").append(str);
+                    }                    
+                }
+            },'json'
+        )
+    }
+
+    /**
+     *根据时间戳格式化为日期形式
+     */
+    function mydate(nS){
+
+        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
+    }
+
+</script>
+
+</html>

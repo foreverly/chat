@@ -1,0 +1,162 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,
+form,fieldset,legend,button,input,textarea,th,td,section,p,span,font,div{margin:0;padding:0;font-family:"Microsoft yahei";color:#333;}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:"Microsoft yahei";}
+small{font-size:12px;}
+ul,ol{list-style:none;}
+a{text-decoration:none;color: #333;}
+a:hover{text-decoration: underline;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+ 
+ 
+html,body{
+    border: 0;
+    font-family: "Arial","Microsoft YaHei","微软雅黑","宋体",'Hiragino Sans GB',,"黑体",sans-serif; 
+    font-family: Helvetica, '黑体', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(235,235,241);
+    min-width: 1000px; 
+    max-width: 1920px;
+    margin: 0 auto; 
+    font-weight: normal;
+    background: #fff;
+    
+ 
+}
+.imgbox{
+ position: relative;
+ margin:0 auto;
+}
+.imgbox img{
+ width: 100%;
+ margin:0 auto;
+vertical-align: bottom;
+}
+video{
+width: 100%;
+height: 590px;
+vertical-align: bottom;
+}
+source{
+width: 100%;
+height: 100%;
+vertical-align: bottom;
+}
+.prenodebox{
+position: absolute;
+left: 14%;
+top: 60%;
+}
+.prenodelabel{
+border:1px solid #fff;
+border-radius: 20px;
+color:#fff;
+padding-left: 20px;
+text-align: left;
+font-size: 13px;
+width: 300px;
+height: 35px;
+line-height: 35px;
+margin-bottom: 20px;
+}
+.prenodebtn{
+width: 200px;
+height: 35px;
+line-height: 35px;
+border-radius: 10px;
+text-align: center;
+font-size: 14px;
+background: rgb(246,0,38);
+color:#fff;
+cursor: pointer;
+
+}
+.inputbox{
+position: absolute;
+left: 10%;
+top: 10%;
+padding-top: 100px;
+font-size: 14px;
+color:#fff;
+line-height: 1.5;
+}
+.inputitem{
+margin-bottom: 30px;
+color:#fff;
+}
+.inputitem p{
+color:#fff;
+margin-bottom: 10px;
+margin-left: 5px;
+}
+.inputitem input{
+ border:1px #ccc solid;
+ outline:none; 
+width: 250px;
+height: 30px;
+background: #fff;
+border-radius:15px;
+line-height: 30px;
+text-indent: 10px;
+}
+.agreebox input{
+margin-left: 4px;
+}
+.agreebox a{
+margin-left: 10px;
+font-size: 12px;
+color:#fff;
+}
+.btnbox{
+margin-top: 30px;
+}
+.btnbox .btn{
+margin-left: 30px;
+width: 160px;
+height: 35px;
+text-align: center;
+line-height: 35px;
+background: rgb(247,81,57);
+color:#fff;
+font-size: 14px;
+border-radius: 10px;
+cursor: pointer;
+}
+.tgbtn{
+position: absolute;
+top:53%;
+left:50%;
+margin-left: -127px;
+color:#fff;
+font-size: 18px;
+width: 255px;
+height: 84px;
+}
+.tgbtn img{
+width: 100%;
+height: 100%;
+}
+ 
+ 
+.agreementcont{
+padding: 20px;
+font-size: 15px;
+text-decoration: underline;
+line-height: 1.6;
+}
+
+
+
+
+
+
+

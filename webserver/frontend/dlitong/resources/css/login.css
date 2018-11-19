@@ -1,0 +1,182 @@
+*{ margin:0; padding:0; outline: none; box-sizing: border-box; -webkit-box-sizing: border-box;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+html{  width: 100%;   max-width: 768px; margin: 0 auto; background: #fff;}
+body{ background-color:#f5f5f5; width: 100%; font-size:.24rem;   color: #333; position: relative; height: auto; min-height: 100%; font-family: "arial","微软雅黑"; padding-bottom: 1rem;}
+a{ text-decoration:none; outline:none;}
+ 
+h1,h2,h3,h4,h5,h6,ul,ol,li,p{ margin: 0; padding: 0;}
+em,i,span {font-style:normal; display: inline-block;}
+li {list-style: none;}
+.fl{ float:left;}
+.fr{ float:right;}
+.clearfix {*zoom: 1;}
+.clearfix:before,.clearfix:after {display: table;line-height: 0;content: "";}
+.clearfix:after {clear: both;}
+input,textarea{ outline: none; }
+input[type="button"],input[type="submit"], input[type="reset"],button{-webkit-appearance: none; font-family: "微软雅黑"}
+input[type="text"],input[type="password"],input[type="button"],textarea{ -webkit-tap-highlight-color:rgba(0,0,0,0); font-family: "微软雅黑"; }
+html,body{
+	overflow: scroll;
+    border: 0;
+ 
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    max-width: 768px; 
+    margin: 0 auto; 
+
+}
+div{
+	box-sizing: border-box;
+}
+input, button, select {
+    width: 100%;
+    border-width: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+}
+
+.tophead{
+	width: 100%;
+	background: #f00480;
+	height: 1rem;
+    font-size: 0.4rem;
+    color:#fff;
+   
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1rem;
+    position: relative;
+
+}
+.gradient{
+    background: -webkit-linear-gradient(top left, #f1027f, #F0508C);
+   background: -o-linear-gradient(top left,#1edf17, #F0508C, );
+   background: -moz-linear-gradient(top left,#1edf17, #F0508C);
+   background: -ms-linear-gradient(top left,#1edf17, #F0508C);
+}
+.topTab{
+	position: relative;
+	overflow: hidden;
+	background: #fcfcfc;
+}
+.regbtn{
+	position: absolute;
+	right: 0.3rem;
+	 
+	font-size: 0.28rem;
+	color:#fff;
+    line-height: 1rem;
+    font-weight: lighter !important;
+}
+.partline{
+	position: absolute;
+	left:49%;
+	top: 0.3rem;
+	width: 1px;
+	height: 0.5rem;
+	background: #ddd;
+ 
+	z-index: 1000;
+}
+.Tabbox{
+	position: relative;
+	width: 49%;
+	box-sizing: border-box;
+	height: 1.1rem;
+	font-size: 0.3rem;
+	color:#666;
+	background: #fcfcfc;
+	text-align: center;
+	line-height: 1.1rem;
+ 
+	box-sizing: border-box;
+	float: left;
+	font-weight: lighter;
+}
+.selected{
+	color:#f30280;
+}
+.Tabbox:active{
+   color:#f30280;
+}
+.continput{
+	margin-top: 0.7rem;
+    position: relative;
+    background: #fcfcfc;
+    padding-left: 8%;	
+    padding-bottom: 0.3rem;
+}
+.inputbox{
+	border-bottom: 1px solid #dbdbdb;
+	height: 1.35rem;
+	vertical-align: middle;
+	padding-top: 0.5rem;
+}
+.inputicon{
+	float: left;
+	width: 0.35rem;
+	height: 0.35rem;
+	vertical-align: middle;
+	margin-top: 0.1rem;
+}
+.inputicon img{
+	width: 100%;
+	height: 100%;
+}
+.inputcss{
+	width: 90%;
+	text-indent: 10px;
+    font-size: 0.32rem;
+    height: 0.6rem;
+
+}
+.noborder{
+	border: none;
+}
+.btnbox{
+	width: 100%;
+	padding: 0 0.3rem;
+	margin-top: 0.8rem;
+}
+.loginbtn{
+	background: #f1027f;
+	font-size: 0.4rem;
+	height: 0.9rem;
+	color:#fff;
+	text-align: center;
+	line-height: 0.9rem;
+	border-radius: 0.1rem;
+}
+.clearbox{
+	clear: both;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#c8c8c8;
+　　}
+
+input::input-placeholder{color:  #c8c8c8 ;} /* 有些资料显示需要写，有些显示不需要，但是在编辑器webstorm中该属性不被识别 */
+::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #c8c8c8; 
+ font-weight: lighter;
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #c8c8c8; 
+ font-weight: lighter;
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #c8c8c8; 
+ font-weight: lighter;
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #c8c8c8; 
+ font-weight: lighter;
+} 
+
+
+
+
+

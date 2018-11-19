@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head lang="cn">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="resources/css/media.min.css">
+         <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+        <title>产品详情</title>
+        <style>
+        </style>
+   </head>
+<body>
+   <div id="DltDetailpp">
+      <div class="maincont">
+      	 <div class="detailnav">
+      	 <a class="backhome" href="index.html">返回首页</a>
+      	 贷款详情</div>
+      	 <div class="detailwrap">
+      	 	 <div class="detailbox">
+      	 	 <div class="detailtop clearbox">
+      	 	 	<div class="detaillogo">
+      	 	 		<img src="resources/images/produ/produ1.png"/>
+      	 	 	</div>
+      	 	 	<div class="detailright">
+      	 	 		<div class="detailtitle ellipsis">{{loanDetail.platform}}--{{loanDetail.title}}</div>
+      	 	 		<div class="detailtag">
+      	 	 			<ul class="detailtaglist" >
+      	 	 			     <li class="tag" v-for="item in loanDetail.tag_list">
+      	 	 			     	<span class="itemtagname">{{item.tag_name}}</span>
+      	 	 			     	<img  src="resources/images/icon/rightsword2.png"/>
+      	 	 			     </li>	
+      	 	 			      
+      	 	 			</ul>
+      	 	 			<div class="detaillabbot">
+      	 	 				<span class="detailapplynum">{{loanDetail.apply_num}}</span>
+      	 	 				<span>人成功申请</span>
+      	 	 				<span class="applyrate">成功率</span>
+      	 	 				<img class="stars" src="resources/images/icon/stars.png"/>
+      	 	 				<img class="stars" src="resources/images/icon/stars.png"/>
+      	 	 				<img class="stars" src="resources/images/icon/stars.png"/>
+      	 	 			</div>
+      	 	 		</div>
+      	 	 	 </div>
+      	 	 	</div>
+      	 	 	<div class="detailbot">
+      	 	 		<span>{{loanDetail.sub_title}}</span>
+      	 	 	</div>
+      	 	 </div>
+
+      	 	 <div class="detail-edu">
+      	 	 	<div class="eduboxup">
+      	 	 		<div class="icontrig"></div>
+      	 	 		<div class="eduinputcont">
+      	 	 			<div class="eduinputitem">
+      	 	 				<input type="text" name="edunum" v-bind:value="loanDetail.default_loan_money">
+      	 	 			    <span class="unit">元</span>
+      	 	 			   <div class="edu-range" > 额度范围：{{loanDetail.loan_min}}}~{{loanDetail.loan_max}}万 </div>
+      	 	 			</div>
+      	 	 			<div class="eduinputitem lastinputitem">
+      	 	 			   <div class="edutimerange">
+      	 	 			        	 	 			  
+	      	 	 				<input type="number" _v-5687f908="">
+	      	 	 				<span class="month" _v-5687f908="">日</span>
+	      	 	 				<img  class="arrowdown" src="resources/images/icon/arrowdown.png" />
+	      	 	 				<div class="date-range"  > 
+	      	 	 				期限范围：{{loanDetail.date_min}}<span v-if="loanDetail.date_type==1">月</span> 
+	      	 	 				<span v-else>日</span>~{{loanDetail.date_max}}<span v-if="loanDetail.date_type==1">月</span> 
+	      	 	 				<span v-else>日</span> </div>
+                           </div>
+      	 	 			</div>
+      	 	 		</div>
+      	 	 	</div>
+      	 	 	<div class="eduboxdown">
+
+      	 	 		<div class="edudowncont">
+      	 	 			<div class="edudownitem">
+      	 	 				<div class="num">0.5
+                               <span>%</span>
+      	 	 				</div>
+      	 	 				<div class="des"><span v-if="loanDetail.rate_type==1">月</span><span v-if="loanDetail.rate_type==2">日</span>利率</div>
+      	 	 			</div>
+      	 	 			<div class="edudownitem">
+      	 	 				<div class="num"> 300
+                               <span></span>
+      	 	 				 
+      	 	 				</div>
+      	 	 				<div class="des">每月返款</div>
+      	 	 			</div>
+      	 	 			<div class="edudownitem noborder">
+      	 	 				<div class="num">{{loanDetail.fastest_lending_time }}
+                               <span>小时</span>
+      	 	 				 
+      	 	 				</div>
+      	 	 				<div class="des">最快放款时间</div>
+      	 	 			</div>
+
+      	 	 		</div>
+      	 	 		<div class="txtrepay" > 按日计息,随借随还 </div>
+      	 	 	</div>
+      	 	 </div>
+      	 	 <section class="applycond">
+      	 	 	<div class="condtitle">
+      	 	 		<img src="resources/images/icon/iconcond.png"/>
+      	 	 		申请条件
+      	 	 	</div>
+      	 	 	<div class="condcont">
+      	 	 	   <p v-html="loanDetail.apply_eligible"></p>
+      	 	 	 
+      	 	 	</div>
+      	 	 </section>
+      	 	 <section class="materialneed">
+      	 	 	 <div class="title material">
+      	 	 	 	<img src="resources/images/icon/iconmaterial.png"/>
+      	 	 	 	所需材料
+      	 	 	 </div>
+      	 	 	 <div class="needcontent">
+      	 	 	   <p v-html="loanDetail.product_info"></p>
+      	 	 	 	 
+      	 	 	      
+      	 	 	 </div>
+      	 	 </section>
+      	 	 <div class="applybtnbox">
+      	 	 	<i></i>
+      	 	 	<button id="applysubmitbtn">填写资料并申请</button>
+      	 	 </div>
+      	 </div>
+      </div>
+   	
+   </div>
+   
+   <div class="applypopcont" style="display: none;">
+   	  <div class="overgray"></div>
+   	  <div class="submitinfocont">
+   	  	  <div class="popapplybox ">
+   	  	  	 <span id="popapplyclose" class="popapplyclose">关闭</span>
+   	  	  	 <div class="subcont">
+   	  	  	 	 <div class="popsubtitle">请验证姓名、手机号码</div>
+   	  	  	 	 <div class="popinputlist">
+   	  	  	 	 	<div class="popinputitem">
+   	  	  	 	 		<input type="text" placeholder="请输入手机号码" maxlength="=11" />
+   	  	  	 	 	</div>
+   	  	  	 	 	<div class="popinputitem" style="display: none">
+   	  	  	 	 		<input type="text" placeholder="请输入下方图片上内容" maxlength="=11" />
+   	  	  	 	 	</div>
+   	  	  	 	 	<div class="popinputitem yzmimgbox " style="display: none">
+   	  	  	 	 		  <img class="yzmimg" src=""/>
+   	  	  	 	 		  <span  class="changeyzmbtn" id="changeYzmImg">看不清楚，请换一张</span>
+   	  	  	 	 	</div>
+   	  	  	 	 	<div class="popinputitem vertify">
+   	  	  	 	 		<input type="text" placeholder="请输入验证码"  />
+   	  	  	 	 	    <button type="button" class="sendyzmbtn">发送验证码</button>
+   	  	  	 	 	</div>
+   	  	  	 	 	<div class="comfirmsub">
+   	  	  	 	 		<button>确认并提交</button>
+   	  	  	 	 	</div>
+   	  	  	 	 </div>
+   	  	  	 </div>
+   	  	  </div>
+   	  </div>
+   </div>
+
+  <script type="text/javascript" src="resources/js/zepto.min.js"></script>
+  <script type="text/javascript" src="resources/js/vue.min.js"></script>
+  <script type="text/javascript">
+  	
+  	 var DltApp = new Vue({
+        el: '#DltDetailpp',
+        data: {
+          selectdatalist:[],
+          loanDetail:[]//产品列表分类
+         
+        },
+       created:function(){
+         console.log("create");
+       },
+       updated:function(){
+         console.log("update");
+       },
+       Destroyed:function(){
+        console.log("destroyed");
+       },
+       methods:{
+         
+          //渲染产品列表数据
+          renderloanDetail:function(data){
+            this.loanDetail=data;
+          }
+        }
+      });
+
+
+	  
+ 
+    
+        var loanDetail= {
+	      "product_id": "1",// ID
+	      "title": "现金借款", // 标题
+	      "sub_title": "3步申请，额度高达3万，高通过率", // 宣传语、简要标题
+	      "logo_url": "1", // 产品logo
+	      "product_url": "1", // H5跳转地址
+	      "apply_num": "238639", // 申请数量
+	      "apply_eligible": "<pre>1、18-55岁</pre> <pre>2、代发工资5000以上</pre>", // 申请条件
+	      "apply_process": [
+	      	{
+	      		'icon':'1.jpg',
+	      	 	'name':'银行卡认证'
+	        }, 
+	        
+	        {
+	      		'icon':'4.jpg',
+	      	 	'name':'芝麻信用认证'
+	        }
+	      ],// 申请流程
+	      "tag_list": [
+	      	{
+	      		'icon':'1.jpg',
+	      	 	'tag_name':'小额极速贷'
+	        }, 
+	       
+	        {
+	      		'icon':'4.jpg',
+	      	 	'tag_name':'青年贷'
+	        },
+	         {
+	      		'icon':'4.jpg',
+	      	 	'tag_name':'不查征信'
+	         },
+	         {
+	      		'icon':'4.jpg',
+	      	 	'tag_name':'不看负债'
+	         }
+
+	      ],// 申请流程
+	      "fastest_lending_time": "2", // 最快放款时间1小时
+	      "product_info": " <pre>1、身份证 </pre> <pre>2、手机验证 </pre> <pre>3、储蓄卡（本人）</pre><pre>4、银行流水 </pre>", // 所需材料
+	      "rate_min": "1", // 最小利率
+	      "rate_max": "1", // 最高利率
+	      "rate_type": "1", // 利率类型 1为月利率2日利率
+	      "default_rate": "0.66", // 参考利率 用于计算
+	      "date_min": "100", // 最小期限
+	      "date_max": "300", // 最大期限
+	      "date_type": "1", // 期限类型 1月2日
+	      "default_date": "1", // 默认显示的期限 用于计算
+	      "date_list": [1,3,5,7], // 贷款期限列表 
+	      "loan_min": "500", // 最小额度
+	      "loan_max": "15000", // 最高额度
+	      "default_loan_money": "150000", // 默认 展示的额度 用于计算
+	      "audit_info": "1", // 审核条件
+	      "jump_type": "1", // 跳转类型 1H5，0原生
+	      "customer_service_tel": "1", // 客服电话
+	      "process_phone": "1", // 申请进度电话
+	      "process_check_url": "1", // 审核进度查询地址
+	      "platform": "极速贷", // 借贷平台
+	      "help_url": "1", // 帮助中心
+	      "activity_url": "", // 活动地址 
+	     
+	  };
+       
+
+   DltApp.renderloanDetail(loanDetail);//贷款详情
+
+
+  	$("#popapplyclose").on("click",function(){
+  		$(".applypopcont").hide();
+  	});
+  	$("#applysubmitbtn").on("click",function(){
+  		$(".applypopcont").show();
+  	})
+  </script>
+</body>
+</html>
