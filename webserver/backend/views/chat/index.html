@@ -86,6 +86,7 @@
         var message = JSON.parse(e.data);
 
         switch (message.type){
+            // 初始化
             case 'init':
                 var bind = {};
                 bind.type = 'bind';
@@ -103,6 +104,7 @@
                 changeNoRead();
 
                 break;
+            // 接收文本消息
             case 'text':
                 var content = message.data;
 
@@ -113,6 +115,7 @@
                 }
 
                 break;
+            // 接收图片消息
             case 'say_img':
                 var content = message.data;
 
@@ -123,9 +126,11 @@
                 }
 
                 break;
+            // 保存消息
             case 'save':
                 saveMessage(message);
                 break;
+            // 在线检测
             case 'online':
                 if (message.status == 1) {
                     online = 1;
@@ -138,6 +143,7 @@
         }        
     }
 
+    //  消息提交
     $(".send-btn").on('click',function(){
         var message = $(".send-input").val();
         var content = {};
